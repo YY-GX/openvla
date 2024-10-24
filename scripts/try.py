@@ -43,6 +43,7 @@ env = simpler_env.make('google_robot_pick_coke_can')
 obs, reset_info = env.reset()
 instruction = env.get_language_instruction()
 image = get_image_from_maniskill2_obs_dict(env, obs)
+image = Image.fromarray(image)
 prompt = "In: What action should the robot take to pick coke can?\nOut:"
 inputs = processor(prompt, image).to("cuda:0", dtype=torch.bfloat16)
 action = vla.predict_action(**inputs, unnorm_key="bridge_orig", do_sample=False)
