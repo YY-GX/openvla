@@ -27,7 +27,7 @@ sbatch \
   --gpus=$GPUS \
   -o "$LOG_DIR/$LOG_FILE" \
   -J $JOB_NAME \
-  --wrap="torchrun --standalone --nnodes 1 --nproc-per-node $GPUS $SCRIPT_PATH \
+  --wrap="conda activate openvla-libero && torchrun --standalone --nnodes 1 --nproc-per-node $GPUS $SCRIPT_PATH \
     --vla_path $VLA_PATH \
     --data_root_dir $DATA_ROOT_DIR \
     --dataset_name $DATASET_NAME \
