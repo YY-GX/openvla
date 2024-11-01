@@ -89,7 +89,7 @@ def main(args):
 
     # Get task suite
     benchmark_dict = benchmark.get_benchmark_dict()
-    task_suite = benchmark_dict[args.libero_task_suite]()
+    task_suite = benchmark_dict[args.libero_task_suite]()  # yy: where benchmark class is instantiated
     num_tasks_in_suite = task_suite.n_tasks
 
     # Setup
@@ -237,10 +237,10 @@ def main(args):
 
 
 if __name__ == "__main__":
-    benchmark.get_benchmark_dict()['libero_90']()
-    print(get_libero_dummy_action)
-    print(get_libero_env)
-    exit(0)
+    # benchmark.get_benchmark_dict()['libero_90']()
+    # print(get_libero_dummy_action)
+    # print(get_libero_env)
+    # exit(0)
 
     # Parse command-line arguments
     parser = argparse.ArgumentParser()
