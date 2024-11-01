@@ -82,7 +82,7 @@ class GenerateConfig:
     wandb_project: str = "YOUR_WANDB_PROJECT"        # Name of W&B project to log to (use default!)
     wandb_entity: str = "YOUR_WANDB_ENTITY"          # Name of entity to log under
 
-    seed: int = 7                                    # Random Seed (for reproducibility)
+    seed: int = 10000                                    # Random Seed (for reproducibility)
 
     # fmt: on
 
