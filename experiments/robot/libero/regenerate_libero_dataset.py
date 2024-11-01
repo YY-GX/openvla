@@ -247,9 +247,11 @@ if __name__ == "__main__":
     parser.add_argument("--libero_task_suite", type=str, choices=["libero_spatial", "libero_object", "libero_goal", "libero_10", "libero_90"],
                         help="LIBERO task suite. Example: libero_spatial", required=True)
     parser.add_argument("--libero_raw_data_dir", type=str,
-                        help="Path to directory containing raw HDF5 dataset. Example: ./LIBERO/libero/datasets/libero_spatial", required=True)
+                        help="Path to directory containing raw HDF5 dataset. Example: ./LIBERO/libero/datasets/libero_spatial", required=True,
+                        default="/mnt/arc/yygx/pkgs_baselines/LIBERO/libero/datasets/libero_90")
     parser.add_argument("--libero_target_dir", type=str,
-                        help="Path to regenerated dataset directory. Example: ./LIBERO/libero/datasets/libero_spatial_no_noops", required=True)
+                        help="Path to regenerated dataset directory. Example: ./LIBERO/libero/datasets/libero_spatial_no_noops", required=True,
+                        default="/mnt/arc/yygx/pkgs_baselines/LIBERO/libero/datasets/libero_90_openvla_no_noops")
     args = parser.parse_args()
 
     # Start data regeneration
