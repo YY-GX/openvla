@@ -78,7 +78,9 @@ def main(args):
 
     # Create target directory
     if os.path.isdir(args.libero_target_dir):
-        user_input = input(f"Target directory already exists at path: {args.libero_target_dir}\nEnter 'y' to overwrite the directory, or anything else to exit: ")
+        # yy: I comment this
+        # user_input = input(f"Target directory already exists at path: {args.libero_target_dir}\nEnter 'y' to overwrite the directory, or anything else to exit: ")
+        user_input = 'y'
         if user_input != 'y':
             exit()
     os.makedirs(args.libero_target_dir, exist_ok=True)
