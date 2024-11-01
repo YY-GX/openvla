@@ -43,6 +43,7 @@ from experiments.robot.libero.libero_utils import (
     get_libero_env,
 )
 
+import pickle
 
 
 
@@ -118,6 +119,7 @@ def main(args):
         new_data_file = h5py.File(new_data_path, "w")
         grp = new_data_file.create_group("data")
 
+        succ_dict = {"success_idx": [], "failure_idx": []}
         for i in range(len(orig_data.keys())):
             # Get demo data
             demo_data = orig_data[f"demo_{i}"]
@@ -207,6 +209,12 @@ def main(args):
 
                 num_success += 1
 
+                succ_dict['success_idx'].append(i)
+            else:
+                succ_dict['failure_idx'].append(i)
+
+
+
             num_replays += 1
 
             # Record success/false and initial environment state in metainfo dict
@@ -232,10 +240,16 @@ def main(args):
             # Report total number of no-op actions filtered out so far
             print(f"  Total # no-op actions filtered out: {num_noops}")
 
+
         # Close HDF5 files
         orig_data_file.close()
         new_data_file.close()
         print(f"Saved regenerated demos for task '{task_description}' at: {new_data_path}")
+
+        # Save data
+        succ_info_pth = os.path.join(args.libero_target_dir, f"{task_description}.pkl")
+        with open(succ_info_pth, 'wb') as f:
+            pickle.dump(succ_dict, f)
 
     print(f"Dataset regeneration complete! Saved new dataset at: {args.libero_target_dir}")
     print(f"Saved metainfo JSON at: {metainfo_json_out_path}")
