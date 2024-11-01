@@ -242,6 +242,7 @@ if __name__ == "__main__":
     # print(get_libero_env)
     # exit(0)
 
+
     # Parse command-line arguments
     parser = argparse.ArgumentParser()
     parser.add_argument("--libero_task_suite", type=str, choices=["libero_spatial", "libero_object", "libero_goal", "libero_10", "libero_90"],
