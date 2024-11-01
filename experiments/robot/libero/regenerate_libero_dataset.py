@@ -46,6 +46,47 @@ from experiments.robot.libero.libero_utils import (
 import pickle
 
 
+"""
+close the bottom drawer of the cabinet.pkl: Success Ratio: 0.92, Number of Successes: 46
+close the microwave.pkl: Success Ratio: 0.98, Number of Successes: 49
+close the top drawer of the cabinet.pkl: Success Ratio: 1.00, Number of Successes: 50
+open the bottom drawer of the cabinet.pkl: Success Ratio: 0.92, Number of Successes: 46
+open the microwave.pkl: Success Ratio: 0.98, Number of Successes: 49
+open the top drawer of the cabinet.pkl: Success Ratio: 1.00, Number of Successes: 50
+put the black bowl at the back on the plate.pkl: Success Ratio: 0.92, Number of Successes: 46
+put the black bowl at the front on the plate.pkl: Success Ratio: 0.82, Number of Successes: 41
+put the black bowl in the bottom drawer of the cabinet.pkl: Success Ratio: 0.94, Number of Successes: 47
+put the black bowl in the top drawer of the cabinet.pkl: Success Ratio: 1.00, Number of Successes: 50
+put the black bowl on the plate.pkl: Success Ratio: 0.90, Number of Successes: 45
+put the black bowl on top of the cabinet.pkl: Success Ratio: 0.98, Number of Successes: 49
+put the chocolate pudding to the left of the plate.pkl: Success Ratio: 0.94, Number of Successes: 47
+put the chocolate pudding to the right of the plate.pkl: Success Ratio: 1.00, Number of Successes: 50
+put the frying pan on the cabinet shelf.pkl: Success Ratio: 0.72, Number of Successes: 36
+put the frying pan on the stove.pkl: Success Ratio: 0.94, Number of Successes: 47
+put the frying pan on top of the cabinet.pkl: Success Ratio: 0.74, Number of Successes: 37
+put the frying pan under the cabinet shelf.pkl: Success Ratio: 0.90, Number of Successes: 45
+put the ketchup in the top drawer of the cabinet.pkl: Success Ratio: 0.88, Number of Successes: 44
+put the middle black bowl on the plate.pkl: Success Ratio: 0.98, Number of Successes: 49
+put the middle black bowl on top of the cabinet.pkl: Success Ratio: 0.96, Number of Successes: 48
+put the moka pot on the stove.pkl: Success Ratio: 0.92, Number of Successes: 46
+put the red mug on the left plate.pkl: Success Ratio: 0.70, Number of Successes: 35
+put the red mug on the plate.pkl: Success Ratio: 0.88, Number of Successes: 44
+put the red mug on the right plate.pkl: Success Ratio: 0.88, Number of Successes: 44
+put the right moka pot on the stove.pkl: Success Ratio: 0.86, Number of Successes: 43
+put the white bowl on the plate.pkl: Success Ratio: 0.84, Number of Successes: 42
+put the white bowl on top of the cabinet.pkl: Success Ratio: 0.90, Number of Successes: 45
+put the white bowl to the right of the plate.pkl: Success Ratio: 0.90, Number of Successes: 45
+put the white mug on the left plate.pkl: Success Ratio: 0.90, Number of Successes: 45
+put the white mug on the plate.pkl: Success Ratio: 0.88, Number of Successes: 44
+put the wine bottle in the bottom drawer of the cabinet.pkl: Success Ratio: 0.90, Number of Successes: 45
+put the wine bottle on the wine rack.pkl: Success Ratio: 0.74, Number of Successes: 37
+stack the black bowl at the front on the black bowl in the middle.pkl: Success Ratio: 0.98, Number of Successes: 49
+stack the middle black bowl on the back black bowl.pkl: Success Ratio: 0.76, Number of Successes: 38
+turn off the stove.pkl: Success Ratio: 0.84, Number of Successes: 42
+turn on the stove.pkl: Success Ratio: 0.98, Number of Successes: 49
+"""
+
+
 
 IMAGE_RESOLUTION = 256
 
