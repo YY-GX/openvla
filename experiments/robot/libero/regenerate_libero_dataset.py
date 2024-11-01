@@ -238,6 +238,8 @@ def main(args):
 
 if __name__ == "__main__":
     benchmark.get_benchmark_dict()['libero_90']()
+    print(get_libero_dummy_action)
+    print(get_libero_env)
     exit(0)
 
     # Parse command-line arguments
