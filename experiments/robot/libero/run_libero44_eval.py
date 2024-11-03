@@ -18,6 +18,11 @@ Usage:
 """
 
 import os
+current_working_directory = os.getcwd()
+os.chdir(os.environ['PYTHONPATH'])
+from libero.libero import benchmark
+os.chdir(current_working_directory)
+
 import sys
 from dataclasses import dataclass
 from pathlib import Path
@@ -26,7 +31,6 @@ from typing import Optional, Union
 import draccus
 import numpy as np
 import tqdm
-from libero.libero import benchmark
 
 import wandb
 
