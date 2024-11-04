@@ -39,7 +39,6 @@ sys.path.append("../..")
 from experiments.robot.libero.libero_utils import (
     get_libero_dummy_action,
     get_libero_env,
-    get_libero_subproc_env,
     get_libero_image,
     quat2axisangle,
     save_rollout_video,
@@ -73,8 +72,8 @@ class GenerateConfig:
     #################################################################################################################
     # LIBERO environment-specific parameters
     #################################################################################################################
-    # task_suite_name: str = "libero_90"          # Task suite. Options: libero_spatial, libero_object, libero_goal, libero_10, libero_90
-    task_suite_name: str = "single_step"  # Task suite. Options: libero_spatial, libero_object, libero_goal, libero_10, libero_90
+    task_suite_name: str = "libero_90"          # Task suite. Options: libero_spatial, libero_object, libero_goal, libero_10, libero_90
+    # task_suite_name: str = "single_step"  # Task suite. Options: libero_spatial, libero_object, libero_goal, libero_10, libero_90
     num_steps_wait: int = 5                         # Number of steps to wait for objects to stabilize in sim
     num_trials_per_task: int = 20                    # Number of rollouts per task
 
@@ -103,10 +102,19 @@ def eval_libero(cfg: GenerateConfig) -> None:
     # Set random seed
     set_seed_everywhere(cfg.seed)
 
+    # [OpenVLA] Set action un-normalization key
+    # cfg.unnorm_key = cfg.task_suite_name
+
     # Load model
     model = get_model(cfg)
 
+    # yy: TODO: I don't get what this part is about
+    # [OpenVLA] Check that the model contains the action un-normalization key
     if cfg.model_family == "openvla":
+        # In some cases, the key must be manually modified (e.g. after training on a modified version of the dataset
+        # with the suffix "_no_noops" in the dataset name)
+        # if cfg.unnorm_key not in model.norm_stats and f"{cfg.unnorm_key}_no_noops" in model.norm_stats:
+        #     cfg.unnorm_key = f"{cfg.unnorm_key}_no_noops"
         cfg.unnorm_key = "libero44"
         assert cfg.unnorm_key in model.norm_stats, f"Action un-norm key {cfg.unnorm_key} not found in VLA `norm_stats`!"
 
@@ -144,6 +152,7 @@ def eval_libero(cfg: GenerateConfig) -> None:
 
     # Start evaluation
     total_episodes, total_successes = 0, 0
+    tasks_success_list = []
     for task_id in tqdm.tqdm(range(num_tasks_in_suite)):
         # Get task
         task = task_suite.get_task(task_id)
@@ -152,8 +161,7 @@ def eval_libero(cfg: GenerateConfig) -> None:
         initial_states = task_suite.get_task_init_states(task_id)
 
         # Initialize LIBERO environment and task description
-        env, task_description = get_libero_subproc_env(task, num_trials_per_task=cfg.num_trials_per_task, resolution=256)
-        # env, task_description = get_libero_env(task, cfg.model_family, resolution=256)
+        env, task_description = get_libero_env(task, cfg.model_family, resolution=256)
 
         # Start episodes
         task_episodes, task_successes = 0, 0
@@ -195,7 +203,9 @@ def eval_libero(cfg: GenerateConfig) -> None:
                         continue
 
                     # Get preprocessed image
-                    img = get_libero_image(obs, resize_size)
+                    img = get_libero_image(obs, resize_size)  # shape: (224, 224, 3)
+                    print(img.shape)
+                    exit(0)
 
                     # Save preprocessed image for replay video
                     replay_images.append(img)
@@ -259,6 +269,8 @@ def eval_libero(cfg: GenerateConfig) -> None:
         # Log final results
         print(f"Current task success rate: {float(task_successes) / float(task_episodes)}")
         print(f"Current total success rate: {float(total_successes) / float(total_episodes)}")
+        tasks_success_list.append(float(task_successes) / float(task_episodes))
+        np.save(os.path.join(cfg.local_log_dir, "tasks_success_list.npy"), np.array(tasks_success_list))
         log_file.write(f"Current task success rate: {float(task_successes) / float(task_episodes)}\n")
         log_file.write(f"Current total success rate: {float(total_successes) / float(total_episodes)}\n")
         log_file.flush()
@@ -282,6 +294,8 @@ def eval_libero(cfg: GenerateConfig) -> None:
             }
         )
         wandb.save(local_log_filepath)
+
+    np.save(os.path.join(cfg.local_log_dir, "tasks_success_list.npy"), np.array(tasks_success_list))
 
 
 if __name__ == "__main__":
