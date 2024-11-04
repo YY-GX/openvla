@@ -204,8 +204,6 @@ def eval_libero(cfg: GenerateConfig) -> None:
 
                     # Get preprocessed image
                     img = get_libero_image(obs, resize_size)  # shape: (224, 224, 3)
-                    print(img.shape)
-                    exit(0)
 
                     # Save preprocessed image for replay video
                     replay_images.append(img)
