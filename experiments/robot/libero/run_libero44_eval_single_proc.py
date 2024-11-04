@@ -39,7 +39,6 @@ sys.path.append("../..")
 from experiments.robot.libero.libero_utils import (
     get_libero_dummy_action,
     get_libero_env,
-    get_libero_subproc_env,
     get_libero_image,
     quat2axisangle,
     save_rollout_video,
@@ -103,10 +102,19 @@ def eval_libero(cfg: GenerateConfig) -> None:
     # Set random seed
     set_seed_everywhere(cfg.seed)
 
+    # [OpenVLA] Set action un-normalization key
+    # cfg.unnorm_key = cfg.task_suite_name
+
     # Load model
     model = get_model(cfg)
 
+    # yy: TODO: I don't get what this part is about
+    # [OpenVLA] Check that the model contains the action un-normalization key
     if cfg.model_family == "openvla":
+        # In some cases, the key must be manually modified (e.g. after training on a modified version of the dataset
+        # with the suffix "_no_noops" in the dataset name)
+        # if cfg.unnorm_key not in model.norm_stats and f"{cfg.unnorm_key}_no_noops" in model.norm_stats:
+        #     cfg.unnorm_key = f"{cfg.unnorm_key}_no_noops"
         cfg.unnorm_key = "libero44"
         assert cfg.unnorm_key in model.norm_stats, f"Action un-norm key {cfg.unnorm_key} not found in VLA `norm_stats`!"
 
@@ -152,8 +160,7 @@ def eval_libero(cfg: GenerateConfig) -> None:
         initial_states = task_suite.get_task_init_states(task_id)
 
         # Initialize LIBERO environment and task description
-        env, task_description = get_libero_subproc_env(task, num_trials_per_task=cfg.num_trials_per_task, resolution=256)
-        # env, task_description = get_libero_env(task, cfg.model_family, resolution=256)
+        env, task_description = get_libero_env(task, cfg.model_family, resolution=256)
 
         # Start episodes
         task_episodes, task_successes = 0, 0
@@ -196,6 +203,8 @@ def eval_libero(cfg: GenerateConfig) -> None:
 
                     # Get preprocessed image
                     img = get_libero_image(obs, resize_size)
+                    print(img.shape)
+                    exit(0)
 
                     # Save preprocessed image for replay video
                     replay_images.append(img)
