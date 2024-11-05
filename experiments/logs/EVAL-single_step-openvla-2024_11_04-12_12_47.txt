@@ -1,0 +1,4 @@
+Task suite: single_step
+
+Task: close the top drawer of the cabinet
+Starting episode 1...
