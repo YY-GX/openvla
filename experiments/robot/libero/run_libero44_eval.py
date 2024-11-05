@@ -72,8 +72,8 @@ class GenerateConfig:
     #################################################################################################################
     # LIBERO environment-specific parameters
     #################################################################################################################
-    task_suite_name: str = "libero_90"          # Task suite. Options: libero_spatial, libero_object, libero_goal, libero_10, libero_90
-    # task_suite_name: str = "single_step"  # Task suite. Options: libero_spatial, libero_object, libero_goal, libero_10, libero_90
+    # task_suite_name: str = "libero_90"          # Task suite. Options: libero_spatial, libero_object, libero_goal, libero_10, libero_90
+    task_suite_name: str = "single_step"  # Task suite. Options: libero_spatial, libero_object, libero_goal, libero_10, libero_90
     num_steps_wait: int = 5                         # Number of steps to wait for objects to stabilize in sim
     num_trials_per_task: int = 20                    # Number of rollouts per task
 
@@ -87,7 +87,7 @@ class GenerateConfig:
     wandb_project: str = "YOUR_WANDB_PROJECT"        # Name of W&B project to log to (use default!)
     wandb_entity: str = "YOUR_WANDB_ENTITY"          # Name of entity to log under
 
-    seed: int = 10002                                    # Random Seed (for reproducibility)
+    seed: int = 10001                                    # Random Seed (for reproducibility)
 
     # fmt: on
 
