@@ -1,0 +1,353 @@
+Task suite: single_step
+
+Task: close the top drawer of the cabinet
+Starting episode 1...
+Saved rollout MP4 at path ./rollouts/2024_11_03/2024_11_03-17_24_14--episode=1--success=True--task=close_the_top_drawer_of_the_cabinet.mp4
+Success: True
+# episodes completed so far: 1
+# successes: 1 (100.0%)
+
+Task: close the top drawer of the cabinet
+Starting episode 2...
+Saved rollout MP4 at path ./rollouts/2024_11_03/2024_11_03-17_24_14--episode=2--success=True--task=close_the_top_drawer_of_the_cabinet.mp4
+Success: True
+# episodes completed so far: 2
+# successes: 2 (100.0%)
+
+Task: close the top drawer of the cabinet
+Starting episode 3...
+Saved rollout MP4 at path ./rollouts/2024_11_03/2024_11_03-17_24_14--episode=3--success=False--task=close_the_top_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 3
+# successes: 2 (66.7%)
+
+Task: close the top drawer of the cabinet
+Starting episode 4...
+Saved rollout MP4 at path ./rollouts/2024_11_03/2024_11_03-17_24_14--episode=4--success=True--task=close_the_top_drawer_of_the_cabinet.mp4
+Success: True
+# episodes completed so far: 4
+# successes: 3 (75.0%)
+
+Task: close the top drawer of the cabinet
+Starting episode 5...
+Saved rollout MP4 at path ./rollouts/2024_11_03/2024_11_03-17_24_14--episode=5--success=True--task=close_the_top_drawer_of_the_cabinet.mp4
+Success: True
+# episodes completed so far: 5
+# successes: 4 (80.0%)
+
+Task: close the top drawer of the cabinet
+Starting episode 6...
+Saved rollout MP4 at path ./rollouts/2024_11_03/2024_11_03-17_24_14--episode=6--success=False--task=close_the_top_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 6
+# successes: 4 (66.7%)
+
+Task: close the top drawer of the cabinet
+Starting episode 7...
+Saved rollout MP4 at path ./rollouts/2024_11_03/2024_11_03-17_24_14--episode=7--success=True--task=close_the_top_drawer_of_the_cabinet.mp4
+Success: True
+# episodes completed so far: 7
+# successes: 5 (71.4%)
+
+Task: close the top drawer of the cabinet
+Starting episode 8...
+Saved rollout MP4 at path ./rollouts/2024_11_03/2024_11_03-17_24_14--episode=8--success=True--task=close_the_top_drawer_of_the_cabinet.mp4
+Success: True
+# episodes completed so far: 8
+# successes: 6 (75.0%)
+
+Task: close the top drawer of the cabinet
+Starting episode 9...
+Saved rollout MP4 at path ./rollouts/2024_11_03/2024_11_03-17_24_14--episode=9--success=False--task=close_the_top_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 9
+# successes: 6 (66.7%)
+
+Task: close the top drawer of the cabinet
+Starting episode 10...
+Saved rollout MP4 at path ./rollouts/2024_11_03/2024_11_03-17_24_14--episode=10--success=True--task=close_the_top_drawer_of_the_cabinet.mp4
+Success: True
+# episodes completed so far: 10
+# successes: 7 (70.0%)
+
+Task: close the top drawer of the cabinet
+Starting episode 11...
+Saved rollout MP4 at path ./rollouts/2024_11_03/2024_11_03-17_24_14--episode=11--success=True--task=close_the_top_drawer_of_the_cabinet.mp4
+Success: True
+# episodes completed so far: 11
+# successes: 8 (72.7%)
+
+Task: close the top drawer of the cabinet
+Starting episode 12...
+Saved rollout MP4 at path ./rollouts/2024_11_03/2024_11_03-17_24_14--episode=12--success=False--task=close_the_top_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 12
+# successes: 8 (66.7%)
+
+Task: close the top drawer of the cabinet
+Starting episode 13...
+Saved rollout MP4 at path ./rollouts/2024_11_03/2024_11_03-17_24_14--episode=13--success=True--task=close_the_top_drawer_of_the_cabinet.mp4
+Success: True
+# episodes completed so far: 13
+# successes: 9 (69.2%)
+
+Task: close the top drawer of the cabinet
+Starting episode 14...
+Saved rollout MP4 at path ./rollouts/2024_11_03/2024_11_03-17_24_14--episode=14--success=True--task=close_the_top_drawer_of_the_cabinet.mp4
+Success: True
+# episodes completed so far: 14
+# successes: 10 (71.4%)
+
+Task: close the top drawer of the cabinet
+Starting episode 15...
+Saved rollout MP4 at path ./rollouts/2024_11_03/2024_11_03-17_24_14--episode=15--success=False--task=close_the_top_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 15
+# successes: 10 (66.7%)
+
+Task: close the top drawer of the cabinet
+Starting episode 16...
+Saved rollout MP4 at path ./rollouts/2024_11_03/2024_11_03-17_24_14--episode=16--success=True--task=close_the_top_drawer_of_the_cabinet.mp4
+Success: True
+# episodes completed so far: 16
+# successes: 11 (68.8%)
+
+Task: close the top drawer of the cabinet
+Starting episode 17...
+Saved rollout MP4 at path ./rollouts/2024_11_03/2024_11_03-17_24_14--episode=17--success=True--task=close_the_top_drawer_of_the_cabinet.mp4
+Success: True
+# episodes completed so far: 17
+# successes: 12 (70.6%)
+
+Task: close the top drawer of the cabinet
+Starting episode 18...
+Saved rollout MP4 at path ./rollouts/2024_11_03/2024_11_03-17_24_14--episode=18--success=False--task=close_the_top_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 18
+# successes: 12 (66.7%)
+
+Task: close the top drawer of the cabinet
+Starting episode 19...
+Saved rollout MP4 at path ./rollouts/2024_11_03/2024_11_03-17_24_14--episode=19--success=True--task=close_the_top_drawer_of_the_cabinet.mp4
+Success: True
+# episodes completed so far: 19
+# successes: 13 (68.4%)
+
+Task: close the top drawer of the cabinet
+Starting episode 20...
+Saved rollout MP4 at path ./rollouts/2024_11_03/2024_11_03-17_24_14--episode=20--success=True--task=close_the_top_drawer_of_the_cabinet.mp4
+Success: True
+# episodes completed so far: 20
+# successes: 14 (70.0%)
+
+Task: close the top drawer of the cabinet
+Starting episode 21...
+Saved rollout MP4 at path ./rollouts/2024_11_03/2024_11_03-17_24_14--episode=21--success=False--task=close_the_top_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 21
+# successes: 14 (66.7%)
+
+Task: close the top drawer of the cabinet
+Starting episode 22...
+Saved rollout MP4 at path ./rollouts/2024_11_03/2024_11_03-17_24_14--episode=22--success=True--task=close_the_top_drawer_of_the_cabinet.mp4
+Success: True
+# episodes completed so far: 22
+# successes: 15 (68.2%)
+
+Task: close the top drawer of the cabinet
+Starting episode 23...
+Saved rollout MP4 at path ./rollouts/2024_11_03/2024_11_03-17_24_14--episode=23--success=True--task=close_the_top_drawer_of_the_cabinet.mp4
+Success: True
+# episodes completed so far: 23
+# successes: 16 (69.6%)
+
+Task: close the top drawer of the cabinet
+Starting episode 24...
+Saved rollout MP4 at path ./rollouts/2024_11_03/2024_11_03-17_24_14--episode=24--success=False--task=close_the_top_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 24
+# successes: 16 (66.7%)
+
+Task: close the top drawer of the cabinet
+Starting episode 25...
+Saved rollout MP4 at path ./rollouts/2024_11_03/2024_11_03-17_24_14--episode=25--success=True--task=close_the_top_drawer_of_the_cabinet.mp4
+Success: True
+# episodes completed so far: 25
+# successes: 17 (68.0%)
+
+Task: close the top drawer of the cabinet
+Starting episode 26...
+Saved rollout MP4 at path ./rollouts/2024_11_03/2024_11_03-17_24_14--episode=26--success=True--task=close_the_top_drawer_of_the_cabinet.mp4
+Success: True
+# episodes completed so far: 26
+# successes: 18 (69.2%)
+
+Task: close the top drawer of the cabinet
+Starting episode 27...
+Saved rollout MP4 at path ./rollouts/2024_11_03/2024_11_03-17_24_14--episode=27--success=False--task=close_the_top_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 27
+# successes: 18 (66.7%)
+
+Task: close the top drawer of the cabinet
+Starting episode 28...
+Saved rollout MP4 at path ./rollouts/2024_11_03/2024_11_03-17_24_14--episode=28--success=True--task=close_the_top_drawer_of_the_cabinet.mp4
+Success: True
+# episodes completed so far: 28
+# successes: 19 (67.9%)
+
+Task: close the top drawer of the cabinet
+Starting episode 29...
+Saved rollout MP4 at path ./rollouts/2024_11_03/2024_11_03-17_24_14--episode=29--success=True--task=close_the_top_drawer_of_the_cabinet.mp4
+Success: True
+# episodes completed so far: 29
+# successes: 20 (69.0%)
+
+Task: close the top drawer of the cabinet
+Starting episode 30...
+Saved rollout MP4 at path ./rollouts/2024_11_03/2024_11_03-17_24_14--episode=30--success=False--task=close_the_top_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 30
+# successes: 20 (66.7%)
+
+Task: close the top drawer of the cabinet
+Starting episode 31...
+Saved rollout MP4 at path ./rollouts/2024_11_03/2024_11_03-17_24_14--episode=31--success=True--task=close_the_top_drawer_of_the_cabinet.mp4
+Success: True
+# episodes completed so far: 31
+# successes: 21 (67.7%)
+
+Task: close the top drawer of the cabinet
+Starting episode 32...
+Saved rollout MP4 at path ./rollouts/2024_11_03/2024_11_03-17_24_14--episode=32--success=True--task=close_the_top_drawer_of_the_cabinet.mp4
+Success: True
+# episodes completed so far: 32
+# successes: 22 (68.8%)
+
+Task: close the top drawer of the cabinet
+Starting episode 33...
+Saved rollout MP4 at path ./rollouts/2024_11_03/2024_11_03-17_24_14--episode=33--success=False--task=close_the_top_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 33
+# successes: 22 (66.7%)
+
+Task: close the top drawer of the cabinet
+Starting episode 34...
+Saved rollout MP4 at path ./rollouts/2024_11_03/2024_11_03-17_24_14--episode=34--success=True--task=close_the_top_drawer_of_the_cabinet.mp4
+Success: True
+# episodes completed so far: 34
+# successes: 23 (67.6%)
+
+Task: close the top drawer of the cabinet
+Starting episode 35...
+Saved rollout MP4 at path ./rollouts/2024_11_03/2024_11_03-17_24_14--episode=35--success=True--task=close_the_top_drawer_of_the_cabinet.mp4
+Success: True
+# episodes completed so far: 35
+# successes: 24 (68.6%)
+
+Task: close the top drawer of the cabinet
+Starting episode 36...
+Saved rollout MP4 at path ./rollouts/2024_11_03/2024_11_03-17_24_14--episode=36--success=False--task=close_the_top_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 36
+# successes: 24 (66.7%)
+
+Task: close the top drawer of the cabinet
+Starting episode 37...
+Saved rollout MP4 at path ./rollouts/2024_11_03/2024_11_03-17_24_14--episode=37--success=True--task=close_the_top_drawer_of_the_cabinet.mp4
+Success: True
+# episodes completed so far: 37
+# successes: 25 (67.6%)
+
+Task: close the top drawer of the cabinet
+Starting episode 38...
+Saved rollout MP4 at path ./rollouts/2024_11_03/2024_11_03-17_24_14--episode=38--success=True--task=close_the_top_drawer_of_the_cabinet.mp4
+Success: True
+# episodes completed so far: 38
+# successes: 26 (68.4%)
+
+Task: close the top drawer of the cabinet
+Starting episode 39...
+Saved rollout MP4 at path ./rollouts/2024_11_03/2024_11_03-17_24_14--episode=39--success=False--task=close_the_top_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 39
+# successes: 26 (66.7%)
+
+Task: close the top drawer of the cabinet
+Starting episode 40...
+Saved rollout MP4 at path ./rollouts/2024_11_03/2024_11_03-17_24_14--episode=40--success=True--task=close_the_top_drawer_of_the_cabinet.mp4
+Success: True
+# episodes completed so far: 40
+# successes: 27 (67.5%)
+
+Task: close the top drawer of the cabinet
+Starting episode 41...
+Saved rollout MP4 at path ./rollouts/2024_11_03/2024_11_03-17_24_14--episode=41--success=True--task=close_the_top_drawer_of_the_cabinet.mp4
+Success: True
+# episodes completed so far: 41
+# successes: 28 (68.3%)
+
+Task: close the top drawer of the cabinet
+Starting episode 42...
+Saved rollout MP4 at path ./rollouts/2024_11_03/2024_11_03-17_24_14--episode=42--success=False--task=close_the_top_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 42
+# successes: 28 (66.7%)
+
+Task: close the top drawer of the cabinet
+Starting episode 43...
+Saved rollout MP4 at path ./rollouts/2024_11_03/2024_11_03-17_24_14--episode=43--success=True--task=close_the_top_drawer_of_the_cabinet.mp4
+Success: True
+# episodes completed so far: 43
+# successes: 29 (67.4%)
+
+Task: close the top drawer of the cabinet
+Starting episode 44...
+Saved rollout MP4 at path ./rollouts/2024_11_03/2024_11_03-17_24_14--episode=44--success=True--task=close_the_top_drawer_of_the_cabinet.mp4
+Success: True
+# episodes completed so far: 44
+# successes: 30 (68.2%)
+
+Task: close the top drawer of the cabinet
+Starting episode 45...
+Saved rollout MP4 at path ./rollouts/2024_11_03/2024_11_03-17_24_14--episode=45--success=False--task=close_the_top_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 45
+# successes: 30 (66.7%)
+
+Task: close the top drawer of the cabinet
+Starting episode 46...
+Saved rollout MP4 at path ./rollouts/2024_11_03/2024_11_03-17_24_14--episode=46--success=True--task=close_the_top_drawer_of_the_cabinet.mp4
+Success: True
+# episodes completed so far: 46
+# successes: 31 (67.4%)
+
+Task: close the top drawer of the cabinet
+Starting episode 47...
+Saved rollout MP4 at path ./rollouts/2024_11_03/2024_11_03-17_24_14--episode=47--success=True--task=close_the_top_drawer_of_the_cabinet.mp4
+Success: True
+# episodes completed so far: 47
+# successes: 32 (68.1%)
+
+Task: close the top drawer of the cabinet
+Starting episode 48...
+Saved rollout MP4 at path ./rollouts/2024_11_03/2024_11_03-17_24_14--episode=48--success=False--task=close_the_top_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 48
+# successes: 32 (66.7%)
+
+Task: close the top drawer of the cabinet
+Starting episode 49...
+Saved rollout MP4 at path ./rollouts/2024_11_03/2024_11_03-17_24_14--episode=49--success=True--task=close_the_top_drawer_of_the_cabinet.mp4
+Success: True
+# episodes completed so far: 49
+# successes: 33 (67.3%)
+
+Task: close the top drawer of the cabinet
+Starting episode 50...
+Saved rollout MP4 at path ./rollouts/2024_11_03/2024_11_03-17_24_14--episode=50--success=True--task=close_the_top_drawer_of_the_cabinet.mp4
+Success: True
+# episodes completed so far: 50
+# successes: 34 (68.0%)
+Current task success rate: 0.68
+Current total success rate: 0.68

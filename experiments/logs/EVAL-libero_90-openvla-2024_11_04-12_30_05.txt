@@ -1,0 +1,4 @@
+Task suite: libero_90
+
+Task: close the top drawer of the cabinet
+Starting episode 1...

@@ -1,0 +1,1137 @@
+Task suite: single_step
+
+Task: close the top drawer of the cabinet
+Starting episode 1...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=1--success=True--task=close_the_top_drawer_of_the_cabinet.mp4
+Success: True
+# episodes completed so far: 1
+# successes: 1 (100.0%)
+
+Task: close the top drawer of the cabinet
+Starting episode 2...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=2--success=True--task=close_the_top_drawer_of_the_cabinet.mp4
+Success: True
+# episodes completed so far: 2
+# successes: 2 (100.0%)
+
+Task: close the top drawer of the cabinet
+Starting episode 3...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=3--success=False--task=close_the_top_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 3
+# successes: 2 (66.7%)
+
+Task: close the top drawer of the cabinet
+Starting episode 4...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=4--success=True--task=close_the_top_drawer_of_the_cabinet.mp4
+Success: True
+# episodes completed so far: 4
+# successes: 3 (75.0%)
+
+Task: close the top drawer of the cabinet
+Starting episode 5...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=5--success=True--task=close_the_top_drawer_of_the_cabinet.mp4
+Success: True
+# episodes completed so far: 5
+# successes: 4 (80.0%)
+
+Task: close the top drawer of the cabinet
+Starting episode 6...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=6--success=False--task=close_the_top_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 6
+# successes: 4 (66.7%)
+
+Task: close the top drawer of the cabinet
+Starting episode 7...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=7--success=True--task=close_the_top_drawer_of_the_cabinet.mp4
+Success: True
+# episodes completed so far: 7
+# successes: 5 (71.4%)
+
+Task: close the top drawer of the cabinet
+Starting episode 8...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=8--success=True--task=close_the_top_drawer_of_the_cabinet.mp4
+Success: True
+# episodes completed so far: 8
+# successes: 6 (75.0%)
+
+Task: close the top drawer of the cabinet
+Starting episode 9...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=9--success=False--task=close_the_top_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 9
+# successes: 6 (66.7%)
+
+Task: close the top drawer of the cabinet
+Starting episode 10...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=10--success=True--task=close_the_top_drawer_of_the_cabinet.mp4
+Success: True
+# episodes completed so far: 10
+# successes: 7 (70.0%)
+
+Task: close the top drawer of the cabinet
+Starting episode 11...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=11--success=True--task=close_the_top_drawer_of_the_cabinet.mp4
+Success: True
+# episodes completed so far: 11
+# successes: 8 (72.7%)
+
+Task: close the top drawer of the cabinet
+Starting episode 12...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=12--success=False--task=close_the_top_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 12
+# successes: 8 (66.7%)
+
+Task: close the top drawer of the cabinet
+Starting episode 13...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=13--success=True--task=close_the_top_drawer_of_the_cabinet.mp4
+Success: True
+# episodes completed so far: 13
+# successes: 9 (69.2%)
+
+Task: close the top drawer of the cabinet
+Starting episode 14...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=14--success=True--task=close_the_top_drawer_of_the_cabinet.mp4
+Success: True
+# episodes completed so far: 14
+# successes: 10 (71.4%)
+
+Task: close the top drawer of the cabinet
+Starting episode 15...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=15--success=False--task=close_the_top_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 15
+# successes: 10 (66.7%)
+
+Task: close the top drawer of the cabinet
+Starting episode 16...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=16--success=True--task=close_the_top_drawer_of_the_cabinet.mp4
+Success: True
+# episodes completed so far: 16
+# successes: 11 (68.8%)
+
+Task: close the top drawer of the cabinet
+Starting episode 17...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=17--success=True--task=close_the_top_drawer_of_the_cabinet.mp4
+Success: True
+# episodes completed so far: 17
+# successes: 12 (70.6%)
+
+Task: close the top drawer of the cabinet
+Starting episode 18...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=18--success=False--task=close_the_top_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 18
+# successes: 12 (66.7%)
+
+Task: close the top drawer of the cabinet
+Starting episode 19...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=19--success=True--task=close_the_top_drawer_of_the_cabinet.mp4
+Success: True
+# episodes completed so far: 19
+# successes: 13 (68.4%)
+
+Task: close the top drawer of the cabinet
+Starting episode 20...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=20--success=True--task=close_the_top_drawer_of_the_cabinet.mp4
+Success: True
+# episodes completed so far: 20
+# successes: 14 (70.0%)
+Current task success rate: 0.7
+Current total success rate: 0.7
+
+Task: put the black bowl in the top drawer of the cabinet
+Starting episode 1...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=21--success=True--task=put_the_black_bowl_in_the_top_drawer_of_the_cabine.mp4
+Success: True
+# episodes completed so far: 21
+# successes: 15 (71.4%)
+
+Task: put the black bowl in the top drawer of the cabinet
+Starting episode 2...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=22--success=True--task=put_the_black_bowl_in_the_top_drawer_of_the_cabine.mp4
+Success: True
+# episodes completed so far: 22
+# successes: 16 (72.7%)
+
+Task: put the black bowl in the top drawer of the cabinet
+Starting episode 3...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=23--success=True--task=put_the_black_bowl_in_the_top_drawer_of_the_cabine.mp4
+Success: True
+# episodes completed so far: 23
+# successes: 17 (73.9%)
+
+Task: put the black bowl in the top drawer of the cabinet
+Starting episode 4...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=24--success=True--task=put_the_black_bowl_in_the_top_drawer_of_the_cabine.mp4
+Success: True
+# episodes completed so far: 24
+# successes: 18 (75.0%)
+
+Task: put the black bowl in the top drawer of the cabinet
+Starting episode 5...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=25--success=True--task=put_the_black_bowl_in_the_top_drawer_of_the_cabine.mp4
+Success: True
+# episodes completed so far: 25
+# successes: 19 (76.0%)
+
+Task: put the black bowl in the top drawer of the cabinet
+Starting episode 6...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=26--success=True--task=put_the_black_bowl_in_the_top_drawer_of_the_cabine.mp4
+Success: True
+# episodes completed so far: 26
+# successes: 20 (76.9%)
+
+Task: put the black bowl in the top drawer of the cabinet
+Starting episode 7...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=27--success=True--task=put_the_black_bowl_in_the_top_drawer_of_the_cabine.mp4
+Success: True
+# episodes completed so far: 27
+# successes: 21 (77.8%)
+
+Task: put the black bowl in the top drawer of the cabinet
+Starting episode 8...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=28--success=True--task=put_the_black_bowl_in_the_top_drawer_of_the_cabine.mp4
+Success: True
+# episodes completed so far: 28
+# successes: 22 (78.6%)
+
+Task: put the black bowl in the top drawer of the cabinet
+Starting episode 9...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=29--success=True--task=put_the_black_bowl_in_the_top_drawer_of_the_cabine.mp4
+Success: True
+# episodes completed so far: 29
+# successes: 23 (79.3%)
+
+Task: put the black bowl in the top drawer of the cabinet
+Starting episode 10...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=30--success=True--task=put_the_black_bowl_in_the_top_drawer_of_the_cabine.mp4
+Success: True
+# episodes completed so far: 30
+# successes: 24 (80.0%)
+
+Task: put the black bowl in the top drawer of the cabinet
+Starting episode 11...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=31--success=True--task=put_the_black_bowl_in_the_top_drawer_of_the_cabine.mp4
+Success: True
+# episodes completed so far: 31
+# successes: 25 (80.6%)
+
+Task: put the black bowl in the top drawer of the cabinet
+Starting episode 12...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=32--success=True--task=put_the_black_bowl_in_the_top_drawer_of_the_cabine.mp4
+Success: True
+# episodes completed so far: 32
+# successes: 26 (81.2%)
+
+Task: put the black bowl in the top drawer of the cabinet
+Starting episode 13...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=33--success=True--task=put_the_black_bowl_in_the_top_drawer_of_the_cabine.mp4
+Success: True
+# episodes completed so far: 33
+# successes: 27 (81.8%)
+
+Task: put the black bowl in the top drawer of the cabinet
+Starting episode 14...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=34--success=True--task=put_the_black_bowl_in_the_top_drawer_of_the_cabine.mp4
+Success: True
+# episodes completed so far: 34
+# successes: 28 (82.4%)
+
+Task: put the black bowl in the top drawer of the cabinet
+Starting episode 15...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=35--success=True--task=put_the_black_bowl_in_the_top_drawer_of_the_cabine.mp4
+Success: True
+# episodes completed so far: 35
+# successes: 29 (82.9%)
+
+Task: put the black bowl in the top drawer of the cabinet
+Starting episode 16...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=36--success=True--task=put_the_black_bowl_in_the_top_drawer_of_the_cabine.mp4
+Success: True
+# episodes completed so far: 36
+# successes: 30 (83.3%)
+
+Task: put the black bowl in the top drawer of the cabinet
+Starting episode 17...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=37--success=True--task=put_the_black_bowl_in_the_top_drawer_of_the_cabine.mp4
+Success: True
+# episodes completed so far: 37
+# successes: 31 (83.8%)
+
+Task: put the black bowl in the top drawer of the cabinet
+Starting episode 18...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=38--success=True--task=put_the_black_bowl_in_the_top_drawer_of_the_cabine.mp4
+Success: True
+# episodes completed so far: 38
+# successes: 32 (84.2%)
+
+Task: put the black bowl in the top drawer of the cabinet
+Starting episode 19...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=39--success=True--task=put_the_black_bowl_in_the_top_drawer_of_the_cabine.mp4
+Success: True
+# episodes completed so far: 39
+# successes: 33 (84.6%)
+
+Task: put the black bowl in the top drawer of the cabinet
+Starting episode 20...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=40--success=True--task=put_the_black_bowl_in_the_top_drawer_of_the_cabine.mp4
+Success: True
+# episodes completed so far: 40
+# successes: 34 (85.0%)
+Current task success rate: 1.0
+Current total success rate: 0.85
+
+Task: open the bottom drawer of the cabinet
+Starting episode 1...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=41--success=False--task=open_the_bottom_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 41
+# successes: 34 (82.9%)
+
+Task: open the bottom drawer of the cabinet
+Starting episode 2...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=42--success=False--task=open_the_bottom_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 42
+# successes: 34 (81.0%)
+
+Task: open the bottom drawer of the cabinet
+Starting episode 3...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=43--success=False--task=open_the_bottom_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 43
+# successes: 34 (79.1%)
+
+Task: open the bottom drawer of the cabinet
+Starting episode 4...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=44--success=False--task=open_the_bottom_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 44
+# successes: 34 (77.3%)
+
+Task: open the bottom drawer of the cabinet
+Starting episode 5...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=45--success=False--task=open_the_bottom_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 45
+# successes: 34 (75.6%)
+
+Task: open the bottom drawer of the cabinet
+Starting episode 6...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=46--success=False--task=open_the_bottom_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 46
+# successes: 34 (73.9%)
+
+Task: open the bottom drawer of the cabinet
+Starting episode 7...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=47--success=False--task=open_the_bottom_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 47
+# successes: 34 (72.3%)
+
+Task: open the bottom drawer of the cabinet
+Starting episode 8...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=48--success=False--task=open_the_bottom_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 48
+# successes: 34 (70.8%)
+
+Task: open the bottom drawer of the cabinet
+Starting episode 9...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=49--success=False--task=open_the_bottom_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 49
+# successes: 34 (69.4%)
+
+Task: open the bottom drawer of the cabinet
+Starting episode 10...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=50--success=False--task=open_the_bottom_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 50
+# successes: 34 (68.0%)
+
+Task: open the bottom drawer of the cabinet
+Starting episode 11...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=51--success=False--task=open_the_bottom_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 51
+# successes: 34 (66.7%)
+
+Task: open the bottom drawer of the cabinet
+Starting episode 12...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=52--success=False--task=open_the_bottom_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 52
+# successes: 34 (65.4%)
+
+Task: open the bottom drawer of the cabinet
+Starting episode 13...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=53--success=False--task=open_the_bottom_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 53
+# successes: 34 (64.2%)
+
+Task: open the bottom drawer of the cabinet
+Starting episode 14...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=54--success=False--task=open_the_bottom_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 54
+# successes: 34 (63.0%)
+
+Task: open the bottom drawer of the cabinet
+Starting episode 15...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=55--success=False--task=open_the_bottom_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 55
+# successes: 34 (61.8%)
+
+Task: open the bottom drawer of the cabinet
+Starting episode 16...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=56--success=False--task=open_the_bottom_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 56
+# successes: 34 (60.7%)
+
+Task: open the bottom drawer of the cabinet
+Starting episode 17...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=57--success=False--task=open_the_bottom_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 57
+# successes: 34 (59.6%)
+
+Task: open the bottom drawer of the cabinet
+Starting episode 18...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=58--success=False--task=open_the_bottom_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 58
+# successes: 34 (58.6%)
+
+Task: open the bottom drawer of the cabinet
+Starting episode 19...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=59--success=False--task=open_the_bottom_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 59
+# successes: 34 (57.6%)
+
+Task: open the bottom drawer of the cabinet
+Starting episode 20...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=60--success=False--task=open_the_bottom_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 60
+# successes: 34 (56.7%)
+Current task success rate: 0.0
+Current total success rate: 0.5666666666666667
+
+Task: open the top drawer of the cabinet
+Starting episode 1...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=61--success=False--task=open_the_top_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 61
+# successes: 34 (55.7%)
+
+Task: open the top drawer of the cabinet
+Starting episode 2...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=62--success=False--task=open_the_top_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 62
+# successes: 34 (54.8%)
+
+Task: open the top drawer of the cabinet
+Starting episode 3...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=63--success=False--task=open_the_top_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 63
+# successes: 34 (54.0%)
+
+Task: open the top drawer of the cabinet
+Starting episode 4...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=64--success=False--task=open_the_top_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 64
+# successes: 34 (53.1%)
+
+Task: open the top drawer of the cabinet
+Starting episode 5...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=65--success=False--task=open_the_top_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 65
+# successes: 34 (52.3%)
+
+Task: open the top drawer of the cabinet
+Starting episode 6...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=66--success=False--task=open_the_top_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 66
+# successes: 34 (51.5%)
+
+Task: open the top drawer of the cabinet
+Starting episode 7...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=67--success=False--task=open_the_top_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 67
+# successes: 34 (50.7%)
+
+Task: open the top drawer of the cabinet
+Starting episode 8...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=68--success=False--task=open_the_top_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 68
+# successes: 34 (50.0%)
+
+Task: open the top drawer of the cabinet
+Starting episode 9...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=69--success=False--task=open_the_top_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 69
+# successes: 34 (49.3%)
+
+Task: open the top drawer of the cabinet
+Starting episode 10...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=70--success=False--task=open_the_top_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 70
+# successes: 34 (48.6%)
+
+Task: open the top drawer of the cabinet
+Starting episode 11...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=71--success=False--task=open_the_top_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 71
+# successes: 34 (47.9%)
+
+Task: open the top drawer of the cabinet
+Starting episode 12...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=72--success=False--task=open_the_top_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 72
+# successes: 34 (47.2%)
+
+Task: open the top drawer of the cabinet
+Starting episode 13...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=73--success=False--task=open_the_top_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 73
+# successes: 34 (46.6%)
+
+Task: open the top drawer of the cabinet
+Starting episode 14...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=74--success=False--task=open_the_top_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 74
+# successes: 34 (45.9%)
+
+Task: open the top drawer of the cabinet
+Starting episode 15...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=75--success=False--task=open_the_top_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 75
+# successes: 34 (45.3%)
+
+Task: open the top drawer of the cabinet
+Starting episode 16...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=76--success=False--task=open_the_top_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 76
+# successes: 34 (44.7%)
+
+Task: open the top drawer of the cabinet
+Starting episode 17...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=77--success=False--task=open_the_top_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 77
+# successes: 34 (44.2%)
+
+Task: open the top drawer of the cabinet
+Starting episode 18...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=78--success=False--task=open_the_top_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 78
+# successes: 34 (43.6%)
+
+Task: open the top drawer of the cabinet
+Starting episode 19...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=79--success=False--task=open_the_top_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 79
+# successes: 34 (43.0%)
+
+Task: open the top drawer of the cabinet
+Starting episode 20...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=80--success=False--task=open_the_top_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 80
+# successes: 34 (42.5%)
+Current task success rate: 0.0
+Current total success rate: 0.425
+
+Task: put the black bowl on the plate
+Starting episode 1...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=81--success=True--task=put_the_black_bowl_on_the_plate.mp4
+Success: True
+# episodes completed so far: 81
+# successes: 35 (43.2%)
+
+Task: put the black bowl on the plate
+Starting episode 2...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=82--success=True--task=put_the_black_bowl_on_the_plate.mp4
+Success: True
+# episodes completed so far: 82
+# successes: 36 (43.9%)
+
+Task: put the black bowl on the plate
+Starting episode 3...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=83--success=True--task=put_the_black_bowl_on_the_plate.mp4
+Success: True
+# episodes completed so far: 83
+# successes: 37 (44.6%)
+
+Task: put the black bowl on the plate
+Starting episode 4...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=84--success=True--task=put_the_black_bowl_on_the_plate.mp4
+Success: True
+# episodes completed so far: 84
+# successes: 38 (45.2%)
+
+Task: put the black bowl on the plate
+Starting episode 5...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=85--success=True--task=put_the_black_bowl_on_the_plate.mp4
+Success: True
+# episodes completed so far: 85
+# successes: 39 (45.9%)
+
+Task: put the black bowl on the plate
+Starting episode 6...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=86--success=True--task=put_the_black_bowl_on_the_plate.mp4
+Success: True
+# episodes completed so far: 86
+# successes: 40 (46.5%)
+
+Task: put the black bowl on the plate
+Starting episode 7...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=87--success=True--task=put_the_black_bowl_on_the_plate.mp4
+Success: True
+# episodes completed so far: 87
+# successes: 41 (47.1%)
+
+Task: put the black bowl on the plate
+Starting episode 8...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=88--success=True--task=put_the_black_bowl_on_the_plate.mp4
+Success: True
+# episodes completed so far: 88
+# successes: 42 (47.7%)
+
+Task: put the black bowl on the plate
+Starting episode 9...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=89--success=True--task=put_the_black_bowl_on_the_plate.mp4
+Success: True
+# episodes completed so far: 89
+# successes: 43 (48.3%)
+
+Task: put the black bowl on the plate
+Starting episode 10...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=90--success=True--task=put_the_black_bowl_on_the_plate.mp4
+Success: True
+# episodes completed so far: 90
+# successes: 44 (48.9%)
+
+Task: put the black bowl on the plate
+Starting episode 11...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=91--success=True--task=put_the_black_bowl_on_the_plate.mp4
+Success: True
+# episodes completed so far: 91
+# successes: 45 (49.5%)
+
+Task: put the black bowl on the plate
+Starting episode 12...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=92--success=True--task=put_the_black_bowl_on_the_plate.mp4
+Success: True
+# episodes completed so far: 92
+# successes: 46 (50.0%)
+
+Task: put the black bowl on the plate
+Starting episode 13...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=93--success=True--task=put_the_black_bowl_on_the_plate.mp4
+Success: True
+# episodes completed so far: 93
+# successes: 47 (50.5%)
+
+Task: put the black bowl on the plate
+Starting episode 14...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=94--success=True--task=put_the_black_bowl_on_the_plate.mp4
+Success: True
+# episodes completed so far: 94
+# successes: 48 (51.1%)
+
+Task: put the black bowl on the plate
+Starting episode 15...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=95--success=True--task=put_the_black_bowl_on_the_plate.mp4
+Success: True
+# episodes completed so far: 95
+# successes: 49 (51.6%)
+
+Task: put the black bowl on the plate
+Starting episode 16...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=96--success=True--task=put_the_black_bowl_on_the_plate.mp4
+Success: True
+# episodes completed so far: 96
+# successes: 50 (52.1%)
+
+Task: put the black bowl on the plate
+Starting episode 17...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=97--success=True--task=put_the_black_bowl_on_the_plate.mp4
+Success: True
+# episodes completed so far: 97
+# successes: 51 (52.6%)
+
+Task: put the black bowl on the plate
+Starting episode 18...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=98--success=True--task=put_the_black_bowl_on_the_plate.mp4
+Success: True
+# episodes completed so far: 98
+# successes: 52 (53.1%)
+
+Task: put the black bowl on the plate
+Starting episode 19...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=99--success=True--task=put_the_black_bowl_on_the_plate.mp4
+Success: True
+# episodes completed so far: 99
+# successes: 53 (53.5%)
+
+Task: put the black bowl on the plate
+Starting episode 20...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=100--success=True--task=put_the_black_bowl_on_the_plate.mp4
+Success: True
+# episodes completed so far: 100
+# successes: 54 (54.0%)
+Current task success rate: 1.0
+Current total success rate: 0.54
+
+Task: put the black bowl on top of the cabinet
+Starting episode 1...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=101--success=True--task=put_the_black_bowl_on_top_of_the_cabinet.mp4
+Success: True
+# episodes completed so far: 101
+# successes: 55 (54.5%)
+
+Task: put the black bowl on top of the cabinet
+Starting episode 2...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=102--success=True--task=put_the_black_bowl_on_top_of_the_cabinet.mp4
+Success: True
+# episodes completed so far: 102
+# successes: 56 (54.9%)
+
+Task: put the black bowl on top of the cabinet
+Starting episode 3...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=103--success=False--task=put_the_black_bowl_on_top_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 103
+# successes: 56 (54.4%)
+
+Task: put the black bowl on top of the cabinet
+Starting episode 4...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=104--success=True--task=put_the_black_bowl_on_top_of_the_cabinet.mp4
+Success: True
+# episodes completed so far: 104
+# successes: 57 (54.8%)
+
+Task: put the black bowl on top of the cabinet
+Starting episode 5...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=105--success=True--task=put_the_black_bowl_on_top_of_the_cabinet.mp4
+Success: True
+# episodes completed so far: 105
+# successes: 58 (55.2%)
+
+Task: put the black bowl on top of the cabinet
+Starting episode 6...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=106--success=False--task=put_the_black_bowl_on_top_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 106
+# successes: 58 (54.7%)
+
+Task: put the black bowl on top of the cabinet
+Starting episode 7...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=107--success=True--task=put_the_black_bowl_on_top_of_the_cabinet.mp4
+Success: True
+# episodes completed so far: 107
+# successes: 59 (55.1%)
+
+Task: put the black bowl on top of the cabinet
+Starting episode 8...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=108--success=True--task=put_the_black_bowl_on_top_of_the_cabinet.mp4
+Success: True
+# episodes completed so far: 108
+# successes: 60 (55.6%)
+
+Task: put the black bowl on top of the cabinet
+Starting episode 9...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=109--success=False--task=put_the_black_bowl_on_top_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 109
+# successes: 60 (55.0%)
+
+Task: put the black bowl on top of the cabinet
+Starting episode 10...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=110--success=True--task=put_the_black_bowl_on_top_of_the_cabinet.mp4
+Success: True
+# episodes completed so far: 110
+# successes: 61 (55.5%)
+
+Task: put the black bowl on top of the cabinet
+Starting episode 11...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=111--success=True--task=put_the_black_bowl_on_top_of_the_cabinet.mp4
+Success: True
+# episodes completed so far: 111
+# successes: 62 (55.9%)
+
+Task: put the black bowl on top of the cabinet
+Starting episode 12...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=112--success=False--task=put_the_black_bowl_on_top_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 112
+# successes: 62 (55.4%)
+
+Task: put the black bowl on top of the cabinet
+Starting episode 13...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=113--success=True--task=put_the_black_bowl_on_top_of_the_cabinet.mp4
+Success: True
+# episodes completed so far: 113
+# successes: 63 (55.8%)
+
+Task: put the black bowl on top of the cabinet
+Starting episode 14...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=114--success=True--task=put_the_black_bowl_on_top_of_the_cabinet.mp4
+Success: True
+# episodes completed so far: 114
+# successes: 64 (56.1%)
+
+Task: put the black bowl on top of the cabinet
+Starting episode 15...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=115--success=False--task=put_the_black_bowl_on_top_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 115
+# successes: 64 (55.7%)
+
+Task: put the black bowl on top of the cabinet
+Starting episode 16...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=116--success=True--task=put_the_black_bowl_on_top_of_the_cabinet.mp4
+Success: True
+# episodes completed so far: 116
+# successes: 65 (56.0%)
+
+Task: put the black bowl on top of the cabinet
+Starting episode 17...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=117--success=True--task=put_the_black_bowl_on_top_of_the_cabinet.mp4
+Success: True
+# episodes completed so far: 117
+# successes: 66 (56.4%)
+
+Task: put the black bowl on top of the cabinet
+Starting episode 18...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=118--success=False--task=put_the_black_bowl_on_top_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 118
+# successes: 66 (55.9%)
+
+Task: put the black bowl on top of the cabinet
+Starting episode 19...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=119--success=True--task=put_the_black_bowl_on_top_of_the_cabinet.mp4
+Success: True
+# episodes completed so far: 119
+# successes: 67 (56.3%)
+
+Task: put the black bowl on top of the cabinet
+Starting episode 20...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=120--success=True--task=put_the_black_bowl_on_top_of_the_cabinet.mp4
+Success: True
+# episodes completed so far: 120
+# successes: 68 (56.7%)
+Current task success rate: 0.7
+Current total success rate: 0.5666666666666667
+
+Task: open the top drawer of the cabinet
+Starting episode 1...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=121--success=False--task=open_the_top_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 121
+# successes: 68 (56.2%)
+
+Task: open the top drawer of the cabinet
+Starting episode 2...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=122--success=False--task=open_the_top_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 122
+# successes: 68 (55.7%)
+
+Task: open the top drawer of the cabinet
+Starting episode 3...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=123--success=False--task=open_the_top_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 123
+# successes: 68 (55.3%)
+
+Task: open the top drawer of the cabinet
+Starting episode 4...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=124--success=False--task=open_the_top_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 124
+# successes: 68 (54.8%)
+
+Task: open the top drawer of the cabinet
+Starting episode 5...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=125--success=False--task=open_the_top_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 125
+# successes: 68 (54.4%)
+
+Task: open the top drawer of the cabinet
+Starting episode 6...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=126--success=False--task=open_the_top_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 126
+# successes: 68 (54.0%)
+
+Task: open the top drawer of the cabinet
+Starting episode 7...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=127--success=False--task=open_the_top_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 127
+# successes: 68 (53.5%)
+
+Task: open the top drawer of the cabinet
+Starting episode 8...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=128--success=False--task=open_the_top_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 128
+# successes: 68 (53.1%)
+
+Task: open the top drawer of the cabinet
+Starting episode 9...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=129--success=False--task=open_the_top_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 129
+# successes: 68 (52.7%)
+
+Task: open the top drawer of the cabinet
+Starting episode 10...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=130--success=False--task=open_the_top_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 130
+# successes: 68 (52.3%)
+
+Task: open the top drawer of the cabinet
+Starting episode 11...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=131--success=False--task=open_the_top_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 131
+# successes: 68 (51.9%)
+
+Task: open the top drawer of the cabinet
+Starting episode 12...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=132--success=False--task=open_the_top_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 132
+# successes: 68 (51.5%)
+
+Task: open the top drawer of the cabinet
+Starting episode 13...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=133--success=False--task=open_the_top_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 133
+# successes: 68 (51.1%)
+
+Task: open the top drawer of the cabinet
+Starting episode 14...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=134--success=False--task=open_the_top_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 134
+# successes: 68 (50.7%)
+
+Task: open the top drawer of the cabinet
+Starting episode 15...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=135--success=False--task=open_the_top_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 135
+# successes: 68 (50.4%)
+
+Task: open the top drawer of the cabinet
+Starting episode 16...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=136--success=False--task=open_the_top_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 136
+# successes: 68 (50.0%)
+
+Task: open the top drawer of the cabinet
+Starting episode 17...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=137--success=False--task=open_the_top_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 137
+# successes: 68 (49.6%)
+
+Task: open the top drawer of the cabinet
+Starting episode 18...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=138--success=False--task=open_the_top_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 138
+# successes: 68 (49.3%)
+
+Task: open the top drawer of the cabinet
+Starting episode 19...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=139--success=False--task=open_the_top_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 139
+# successes: 68 (48.9%)
+
+Task: open the top drawer of the cabinet
+Starting episode 20...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=140--success=False--task=open_the_top_drawer_of_the_cabinet.mp4
+Success: False
+# episodes completed so far: 140
+# successes: 68 (48.6%)
+Current task success rate: 0.0
+Current total success rate: 0.4857142857142857
+
+Task: put the black bowl at the back on the plate
+Starting episode 1...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=141--success=True--task=put_the_black_bowl_at_the_back_on_the_plate.mp4
+Success: True
+# episodes completed so far: 141
+# successes: 69 (48.9%)
+
+Task: put the black bowl at the back on the plate
+Starting episode 2...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=142--success=False--task=put_the_black_bowl_at_the_back_on_the_plate.mp4
+Success: False
+# episodes completed so far: 142
+# successes: 69 (48.6%)
+
+Task: put the black bowl at the back on the plate
+Starting episode 3...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=143--success=True--task=put_the_black_bowl_at_the_back_on_the_plate.mp4
+Success: True
+# episodes completed so far: 143
+# successes: 70 (49.0%)
+
+Task: put the black bowl at the back on the plate
+Starting episode 4...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=144--success=True--task=put_the_black_bowl_at_the_back_on_the_plate.mp4
+Success: True
+# episodes completed so far: 144
+# successes: 71 (49.3%)
+
+Task: put the black bowl at the back on the plate
+Starting episode 5...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=145--success=False--task=put_the_black_bowl_at_the_back_on_the_plate.mp4
+Success: False
+# episodes completed so far: 145
+# successes: 71 (49.0%)
+
+Task: put the black bowl at the back on the plate
+Starting episode 6...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=146--success=True--task=put_the_black_bowl_at_the_back_on_the_plate.mp4
+Success: True
+# episodes completed so far: 146
+# successes: 72 (49.3%)
+
+Task: put the black bowl at the back on the plate
+Starting episode 7...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=147--success=True--task=put_the_black_bowl_at_the_back_on_the_plate.mp4
+Success: True
+# episodes completed so far: 147
+# successes: 73 (49.7%)
+
+Task: put the black bowl at the back on the plate
+Starting episode 8...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=148--success=False--task=put_the_black_bowl_at_the_back_on_the_plate.mp4
+Success: False
+# episodes completed so far: 148
+# successes: 73 (49.3%)
+
+Task: put the black bowl at the back on the plate
+Starting episode 9...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=149--success=True--task=put_the_black_bowl_at_the_back_on_the_plate.mp4
+Success: True
+# episodes completed so far: 149
+# successes: 74 (49.7%)
+
+Task: put the black bowl at the back on the plate
+Starting episode 10...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=150--success=True--task=put_the_black_bowl_at_the_back_on_the_plate.mp4
+Success: True
+# episodes completed so far: 150
+# successes: 75 (50.0%)
+
+Task: put the black bowl at the back on the plate
+Starting episode 11...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=151--success=False--task=put_the_black_bowl_at_the_back_on_the_plate.mp4
+Success: False
+# episodes completed so far: 151
+# successes: 75 (49.7%)
+
+Task: put the black bowl at the back on the plate
+Starting episode 12...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=152--success=True--task=put_the_black_bowl_at_the_back_on_the_plate.mp4
+Success: True
+# episodes completed so far: 152
+# successes: 76 (50.0%)
+
+Task: put the black bowl at the back on the plate
+Starting episode 13...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=153--success=True--task=put_the_black_bowl_at_the_back_on_the_plate.mp4
+Success: True
+# episodes completed so far: 153
+# successes: 77 (50.3%)
+
+Task: put the black bowl at the back on the plate
+Starting episode 14...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=154--success=False--task=put_the_black_bowl_at_the_back_on_the_plate.mp4
+Success: False
+# episodes completed so far: 154
+# successes: 77 (50.0%)
+
+Task: put the black bowl at the back on the plate
+Starting episode 15...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=155--success=True--task=put_the_black_bowl_at_the_back_on_the_plate.mp4
+Success: True
+# episodes completed so far: 155
+# successes: 78 (50.3%)
+
+Task: put the black bowl at the back on the plate
+Starting episode 16...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=156--success=True--task=put_the_black_bowl_at_the_back_on_the_plate.mp4
+Success: True
+# episodes completed so far: 156
+# successes: 79 (50.6%)
+
+Task: put the black bowl at the back on the plate
+Starting episode 17...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=157--success=False--task=put_the_black_bowl_at_the_back_on_the_plate.mp4
+Success: False
+# episodes completed so far: 157
+# successes: 79 (50.3%)
+
+Task: put the black bowl at the back on the plate
+Starting episode 18...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=158--success=True--task=put_the_black_bowl_at_the_back_on_the_plate.mp4
+Success: True
+# episodes completed so far: 158
+# successes: 80 (50.6%)
+
+Task: put the black bowl at the back on the plate
+Starting episode 19...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=159--success=True--task=put_the_black_bowl_at_the_back_on_the_plate.mp4
+Success: True
+# episodes completed so far: 159
+# successes: 81 (50.9%)
+
+Task: put the black bowl at the back on the plate
+Starting episode 20...
+Saved rollout MP4 at path ./rollouts/2024_11_04/2024_11_04-12_32_42--episode=160--success=False--task=put_the_black_bowl_at_the_back_on_the_plate.mp4
+Success: False
+# episodes completed so far: 160
+# successes: 81 (50.6%)
+Current task success rate: 0.65
+Current total success rate: 0.50625
