@@ -77,7 +77,6 @@ class GenerateConfig:
     num_steps_wait: int = 5                         # Number of steps to wait for objects to stabilize in sim
     num_trials_per_task: int = 20                    # Number of rollouts per task
 
-
     #################################################################################################################
     # Utils
     #################################################################################################################
