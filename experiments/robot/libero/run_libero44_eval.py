@@ -21,6 +21,7 @@ import os
 current_working_directory = os.getcwd()
 os.chdir(os.environ['PYTHONPATH'])
 from libero.libero import benchmark
+# from libero.libero.benchmark import task_orders
 os.chdir(current_working_directory)
 
 import sys
@@ -72,10 +73,11 @@ class GenerateConfig:
     #################################################################################################################
     # LIBERO environment-specific parameters
     #################################################################################################################
-    # task_suite_name: str = "libero_90"          # Task suite. Options: libero_spatial, libero_object, libero_goal, libero_10, libero_90
-    task_suite_name: str = "single_step"  # Task suite. Options: libero_spatial, libero_object, libero_goal, libero_10, libero_90
+    task_suite_name: str = "libero_90"          # Task suite. Options: libero_spatial, libero_object, libero_goal, libero_10, libero_90
+    # task_suite_name: str = "single_step"  # Task suite. Options: libero_spatial, libero_object, libero_goal, libero_10, libero_90
     num_steps_wait: int = 5                         # Number of steps to wait for objects to stabilize in sim
     num_trials_per_task: int = 20                    # Number of rollouts per task
+    # task_order_index: int = 0
 
     #################################################################################################################
     # Utils
@@ -146,6 +148,8 @@ def eval_libero(cfg: GenerateConfig) -> None:
     num_tasks_in_suite = task_suite.n_tasks
     print(f"Task suite: {cfg.task_suite_name}")
     log_file.write(f"Task suite: {cfg.task_suite_name}\n")
+
+    # task_id_ls = task_orders[cfg.task_order_index]
 
     # Get expected image dimensions
     resize_size = get_image_resize_size(cfg)
