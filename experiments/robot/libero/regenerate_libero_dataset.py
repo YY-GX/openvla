@@ -305,7 +305,7 @@ if __name__ == "__main__":
 
     # Parse command-line arguments
     parser = argparse.ArgumentParser()
-    parser.add_argument("--libero_task_suite", type=str, choices=["libero_spatial", "libero_object", "libero_goal", "libero_10", "libero_90"],
+    parser.add_argument("--libero_task_suite", type=str, choices=["libero_spatial", "libero_object", "libero_goal", "libero_10", "libero_90", "bl3_all"],
                         help="LIBERO task suite. Example: libero_spatial", required=True)
     parser.add_argument("--libero_raw_data_dir", type=str,
                         help="Path to directory containing raw HDF5 dataset. Example: ./LIBERO/libero/datasets/libero_spatial",
