@@ -243,6 +243,7 @@ def main(args):
                 obs_grp.create_dataset("agentview_rgb", data=np.stack(agentview_images, axis=0))
                 obs_grp.create_dataset("eye_in_hand_rgb", data=np.stack(eye_in_hand_images, axis=0))
                 ep_data_grp.create_dataset("actions", data=actions)
+                # yy: I commented this
                 # ep_data_grp.create_dataset("states", data=np.stack(states))
                 ep_data_grp.create_dataset("robot_states", data=np.stack(robot_states, axis=0))
                 ep_data_grp.create_dataset("rewards", data=rewards)
