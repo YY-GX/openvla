@@ -44,6 +44,7 @@ from experiments.robot.libero.libero_utils import (
 )
 
 import pickle
+from robosuite.utils.errors import RandomizationError
 
 
 """
@@ -147,7 +148,13 @@ def main(args):
     for task_id in tqdm.tqdm(range(num_tasks_in_suite)):
         # Get task in suite
         task = task_suite.get_task(task_id)
-        env, task_description = get_libero_env(task, "llava", resolution=IMAGE_RESOLUTION)
+        try:
+            env, task_description = get_libero_env(task, "llava", resolution=IMAGE_RESOLUTION)
+        except RandomizationError as e:
+            print(e)
+            print(f">> Error for {task.name}!!")
+            continue
+
 
         # Get dataset for task
         orig_data_path = os.path.join(args.libero_raw_data_dir, f"{task.name}_demo.hdf5")
@@ -157,6 +164,10 @@ def main(args):
 
         # Create new HDF5 file for regenerated demos
         new_data_path = os.path.join(args.libero_target_dir, f"{task.name}_demo.hdf5")
+        if os.path.exists(new_data_path):
+            print(f"{new_data_path} Exists! Continue :0")
+            continue
+
         new_data_file = h5py.File(new_data_path, "w")
         grp = new_data_file.create_group("data")
 
