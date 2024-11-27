@@ -75,7 +75,7 @@ class GenerateConfig:
     #################################################################################################################
     # task_suite_name: str = "libero_90"          # Task suite. Options: libero_spatial, libero_object, libero_goal, libero_10, libero_90
     # task_suite_name: str = "single_step"  # Task suite. Options: libero_spatial, libero_object, libero_goal, libero_10, libero_90
-    task_suite_name: str = "multi_step_3"
+    task_suite_name: str = "multi_step_2"
     # task_suite_name: str = "multi_step_3"
     num_steps_wait: int = 5                         # Number of steps to wait for objects to stabilize in sim
     num_trials_per_task: int = 20                    # Number of rollouts per task
@@ -194,7 +194,9 @@ def eval_libero(cfg: GenerateConfig) -> None:
                 max_steps = 520  # longest training demo has 505 steps
             elif cfg.task_suite_name == "libero_90":
                 max_steps = 400  # longest training demo has 373 steps
-            elif cfg.task_suite_name == "single_step":
+            elif ((cfg.task_suite_name == "single_step") or
+                  (cfg.task_suite_name == "multi_step_2") or
+                  (cfg.task_suite_name == "multi_step_3")):
                 max_steps = 400  # longest training demo has 373 steps
 
             print(f"Starting episode {task_episodes+1}...")
