@@ -74,7 +74,9 @@ class GenerateConfig:
     # LIBERO environment-specific parameters
     #################################################################################################################
     # task_suite_name: str = "libero_90"          # Task suite. Options: libero_spatial, libero_object, libero_goal, libero_10, libero_90
-    task_suite_name: str = "single_step"  # Task suite. Options: libero_spatial, libero_object, libero_goal, libero_10, libero_90
+    # task_suite_name: str = "single_step"  # Task suite. Options: libero_spatial, libero_object, libero_goal, libero_10, libero_90
+    task_suite_name: str = "multi_step_2"
+    # task_suite_name: str = "multi_step_3"
     num_steps_wait: int = 5                         # Number of steps to wait for objects to stabilize in sim
     num_trials_per_task: int = 20                    # Number of rollouts per task
     # task_order_index: int = 0
@@ -272,7 +274,7 @@ def eval_libero(cfg: GenerateConfig) -> None:
         print(f"Current task success rate: {float(task_successes) / float(task_episodes)}")
         print(f"Current total success rate: {float(total_successes) / float(total_episodes)}")
         tasks_success_list.append(float(task_successes) / float(task_episodes))
-        np.save(os.path.join(cfg.local_log_dir, f"tasks_success_list_{cfg.task_suite_name}_seed_{cfg.seed}_sunflower.npy"), np.array(tasks_success_list))
+        np.save(os.path.join(cfg.local_log_dir, f"tasks_success_list_{cfg.task_suite_name}_seed_{cfg.seed}.npy"), np.array(tasks_success_list))
         log_file.write(f"Current task success rate: {float(task_successes) / float(task_episodes)}\n")
         log_file.write(f"Current total success rate: {float(total_successes) / float(total_episodes)}\n")
         log_file.flush()
