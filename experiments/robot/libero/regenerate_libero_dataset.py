@@ -150,7 +150,7 @@ def main(args):
         task = task_suite.get_task(task_id)
         try:
             env, task_description = get_libero_env(task, "llava", resolution=IMAGE_RESOLUTION)
-        except RandomizationError as e:
+        except (RandomizationError, KeyError) as e:
             print(e)
             print(f">> Error for {task.name}!!")
             continue
