@@ -301,7 +301,7 @@ def eval_libero(cfg: GenerateConfig) -> None:
         )
         wandb.save(local_log_filepath)
 
-    np.save(os.path.join(cfg.local_log_dir, f"tasks_success_list_{cfg.task_suite_name}_seed_{cfg.seed}_sunflower.npy"), np.array(tasks_success_list))
+    np.save(os.path.join(cfg.local_log_dir, f"tasks_success_list_{cfg.task_suite_name}_seed_{cfg.seed}.npy"), np.array(tasks_success_list))
 
 
 if __name__ == "__main__":
