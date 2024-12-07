@@ -148,6 +148,7 @@ def openvla_select_action(obs, task_description, resize_size=224):
         wandb_project="YOUR_WANDB_PROJECT",
         wandb_entity="YOUR_WANDB_ENTITY",
         seed=10000,
+        unnorm_key="libero44"
     )
 
     img = get_libero_image(obs, resize_size)
