@@ -36,9 +36,13 @@ import numpy as np
 import torch
 import warnings
 import pickle
-import wandb
-import time
 import copy
+import sys
+from dataclasses import dataclass
+from pathlib import Path
+from typing import Optional, Union
+import numpy as np
+import draccus
 
 # Append current directory so that interpreter can find experiments.robot
 sys.path.append("../..")
@@ -93,56 +97,6 @@ def parse_args():
 
 
 
-
-
-
-def cfg_args():
-    parser = argparse.ArgumentParser(description="Evaluation script for LIBERO tasks")
-
-    #################################################################################################################
-    # Model-specific parameters
-    #################################################################################################################
-    parser.add_argument("--model_family", type=str, default="openvla", help="Model family")
-    parser.add_argument(
-        "--pretrained_checkpoint",
-        type=str,
-        default="runs/bl3_all/1.0.0/openvla-7b+libero_bl3_all+b8+lr-0.0005+lora-r32+dropout-0.0--image_aug",
-        help="Pretrained checkpoint path",
-    )
-    parser.add_argument("--load_in_8bit", action="store_true", default=False, help="Load with 8-bit quantization")
-    parser.add_argument("--load_in_4bit", action="store_true", default=False, help="Load with 4-bit quantization")
-    parser.add_argument("--center_crop", action="store_true", default=True, help="Center crop images (default: True)")
-
-    #################################################################################################################
-    # LIBERO environment-specific parameters
-    #################################################################################################################
-    parser.add_argument(
-        "--task_suite_name",
-        type=str,
-        default="libero_90",
-        help="Task suite. Options: libero_spatial, libero_object, libero_goal, libero_10, libero_90, single_step, multi_step_2, multi_step_3",
-    )
-    parser.add_argument("--num_steps_wait", type=int, default=5, help="Number of steps to wait in sim")
-    parser.add_argument("--num_trials_per_task", type=int, default=20, help="Number of rollouts per task")
-
-    #################################################################################################################
-    # Utils
-    #################################################################################################################
-    parser.add_argument("--run_id_note", type=str, default=None, help="Extra note to add in run ID for logging")
-    parser.add_argument("--local_log_dir", type=str, default="./experiments/logs", help="Directory for eval logs")
-    parser.add_argument("--use_wandb", action="store_true", default=False, help="Log results in Weights & Biases")
-    parser.add_argument("--wandb_project", type=str, default="YOUR_WANDB_PROJECT", help="W&B project name")
-    parser.add_argument("--wandb_entity", type=str, default="YOUR_WANDB_ENTITY", help="W&B entity name")
-    parser.add_argument("--seed", type=int, default=10000, help="Random seed for reproducibility")
-
-    return parser.parse_args()
-
-
-
-
-
-
-
 def initialize_robot_state(crr_state, robot_init_sim_state):
     # yy: 0: timestep; 1-40: states; 41-76: vel_info;
     modified_state = crr_state.copy()
@@ -170,11 +124,52 @@ def reset_env_init_states(env, obs, info, init_states_ls, env_num, task_indexes)
     return obs
 
 
-def openvla_select_action(obs, task_description, resize_size=224):
+
+
+@dataclass
+class GenerateConfig:
+    # fmt: off
+
+    #################################################################################################################
+    # Model-specific parameters
+    #################################################################################################################
+    model_family: str = "openvla"                    # Model family
+    # pretrained_checkpoint: Union[str, Path] = "runs/libero44/1.0.0/openvla-7b+libero44+b8+lr-0.0005+lora-r32+dropout-0.0--image_aug"     # Pretrained checkpoint path (on libero44)
+    pretrained_checkpoint: Union[str, Path] = "runs/bl3_all/1.0.0/openvla-7b+libero_bl3_all+b8+lr-0.0005+lora-r32+dropout-0.0--image_aug"     # Pretrained checkpoint path (on bl3_all)
+    load_in_8bit: bool = False                       # (For OpenVLA only) Load with 8-bit quantization
+    load_in_4bit: bool = False                       # (For OpenVLA only) Load with 4-bit quantization
+    center_crop: bool = True                         # Center crop? (if trained w/ random crop image aug)
+
+    #################################################################################################################
+    # LIBERO environment-specific parameters
+    #################################################################################################################
+    task_suite_name: str = "libero_90"          # Task suite. Options: libero_spatial, libero_object, libero_goal, libero_10, libero_90
+    # task_suite_name: str = "single_step"  # Task suite. Options: libero_spatial, libero_object, libero_goal, libero_10, libero_90
+    # task_suite_name: str = "multi_step_2"
+    # task_suite_name: str = "multi_step_3"
+    num_steps_wait: int = 5                         # Number of steps to wait for objects to stabilize in sim
+    num_trials_per_task: int = 20                    # Number of rollouts per task
+    # task_order_index: int = 0
+
+    #################################################################################################################
+    # Utils
+    #################################################################################################################
+    run_id_note: Optional[str] = None                # Extra note to add in run ID for logging
+    local_log_dir: str = "./experiments/logs"        # Local directory for eval logs
+
+    use_wandb: bool = False                          # Whether to also log results in Weights & Biases
+    wandb_project: str = "YOUR_WANDB_PROJECT"        # Name of W&B project to log to (use default!)
+    wandb_entity: str = "YOUR_WANDB_ENTITY"          # Name of entity to log under
+
+    seed: int = 10000                                    # Random Seed (for reproducibility)
+
+
+
+@draccus.wrap()
+def openvla_select_action(cfg: GenerateConfig, obs, task_description, resize_size=224):
     """
     obs: single env obs
     """
-    cfg = cfg_args()
 
     img = get_libero_image(obs, resize_size)
     observation = {
