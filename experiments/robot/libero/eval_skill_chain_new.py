@@ -76,6 +76,25 @@ algo_map = {
 }
 
 
+openvla_cfg = SimpleNamespace(
+    model_family="openvla",
+    pretrained_checkpoint="runs/libero44/1.0.0/openvla-7b+libero44+b8+lr-0.0005+lora-r32+dropout-0.0--image_aug",
+    load_in_8bit=False,
+    load_in_4bit=False,
+    center_crop=True,
+    task_suite_name="libero_90",
+    num_steps_wait=5,
+    num_trials_per_task=20,
+    run_id_note=None,
+    local_log_dir="./experiments/logs",
+    use_wandb=False,
+    wandb_project="YOUR_WANDB_PROJECT",
+    wandb_entity="YOUR_WANDB_ENTITY",
+    seed=10000,
+    unnorm_key="libero44"
+)
+
+
 def parse_args():
     parser = argparse.ArgumentParser(description="Evaluation Script")
     parser.add_argument("--model_path_folder", type=str,
@@ -125,32 +144,12 @@ def reset_env_init_states(env, obs, info, init_states_ls, env_num, task_indexes)
     return obs
 
 
-
-
-
-def openvla_select_action(obs, task_description, resize_size=224):
+def openvla_select_action(obs, task_description, model, resize_size=224):
     """
     obs: single env obs
     """
 
-    cfg = SimpleNamespace(
-        model_family="openvla",
-        pretrained_checkpoint="runs/libero44/1.0.0/openvla-7b+libero44+b8+lr-0.0005+lora-r32+dropout-0.0--image_aug",
-        load_in_8bit=False,
-        load_in_4bit=False,
-        center_crop=True,
-        task_suite_name="libero_90",
-        num_steps_wait=5,
-        num_trials_per_task=20,
-        run_id_note=None,
-        local_log_dir="./experiments/logs",
-        use_wandb=False,
-        wandb_project="YOUR_WANDB_PROJECT",
-        wandb_entity="YOUR_WANDB_ENTITY",
-        seed=10000,
-        unnorm_key="libero44"
-    )
-
+    cfg = openvla_cfg
     img = get_libero_image(obs, resize_size)
     observation = {
         "full_image": img,
@@ -158,7 +157,6 @@ def openvla_select_action(obs, task_description, resize_size=224):
             (obs["robot0_eef_pos"], quat2axisangle(obs["robot0_eef_quat"]), obs["robot0_gripper_qpos"])
         ),
     }
-    model = get_model(cfg)
     processor = None
     if cfg.model_family == "openvla":
         processor = get_processor(cfg)
@@ -182,6 +180,8 @@ def main():
     n_tasks = benchmark.n_tasks
     task_id_ls = task_orders[args.task_order_index]
     task_idx_ls = [i for i in range(len(task_id_ls))]
+
+    openvla_model = get_model(openvla_cfg)
 
     # Obtain language descriptions
     descriptions = [benchmark.get_task(i).language for i in range(n_tasks)]
@@ -316,7 +316,7 @@ def main():
                 actions = np.zeros((1, 7))
                 for k in range(env_num):
                     task_description = task_ls[task_indexes[k]].language
-                    action = openvla_select_action(obs=obs[k], task_description=task_description)
+                    action = openvla_select_action(obs=obs[k], task_description=task_description, model=openvla_model)
                     actions = np.vstack([actions, action])
                 actions = actions[1:, ...]
                 obs, reward, done, info = env.step(actions)
