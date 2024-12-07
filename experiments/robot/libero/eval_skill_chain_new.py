@@ -43,6 +43,7 @@ from pathlib import Path
 from typing import Optional, Union
 import numpy as np
 import draccus
+from types import SimpleNamespace
 
 # Append current directory so that interpreter can find experiments.robot
 sys.path.append("../..")
@@ -126,50 +127,28 @@ def reset_env_init_states(env, obs, info, init_states_ls, env_num, task_indexes)
 
 
 
-@dataclass
-class GenerateConfig:
-    # fmt: off
 
-    #################################################################################################################
-    # Model-specific parameters
-    #################################################################################################################
-    model_family: str = "openvla"                    # Model family
-    # pretrained_checkpoint: Union[str, Path] = "runs/libero44/1.0.0/openvla-7b+libero44+b8+lr-0.0005+lora-r32+dropout-0.0--image_aug"     # Pretrained checkpoint path (on libero44)
-    pretrained_checkpoint: Union[str, Path] = "runs/bl3_all/1.0.0/openvla-7b+libero_bl3_all+b8+lr-0.0005+lora-r32+dropout-0.0--image_aug"     # Pretrained checkpoint path (on bl3_all)
-    load_in_8bit: bool = False                       # (For OpenVLA only) Load with 8-bit quantization
-    load_in_4bit: bool = False                       # (For OpenVLA only) Load with 4-bit quantization
-    center_crop: bool = True                         # Center crop? (if trained w/ random crop image aug)
-
-    #################################################################################################################
-    # LIBERO environment-specific parameters
-    #################################################################################################################
-    task_suite_name: str = "libero_90"          # Task suite. Options: libero_spatial, libero_object, libero_goal, libero_10, libero_90
-    # task_suite_name: str = "single_step"  # Task suite. Options: libero_spatial, libero_object, libero_goal, libero_10, libero_90
-    # task_suite_name: str = "multi_step_2"
-    # task_suite_name: str = "multi_step_3"
-    num_steps_wait: int = 5                         # Number of steps to wait for objects to stabilize in sim
-    num_trials_per_task: int = 20                    # Number of rollouts per task
-    # task_order_index: int = 0
-
-    #################################################################################################################
-    # Utils
-    #################################################################################################################
-    run_id_note: Optional[str] = None                # Extra note to add in run ID for logging
-    local_log_dir: str = "./experiments/logs"        # Local directory for eval logs
-
-    use_wandb: bool = False                          # Whether to also log results in Weights & Biases
-    wandb_project: str = "YOUR_WANDB_PROJECT"        # Name of W&B project to log to (use default!)
-    wandb_entity: str = "YOUR_WANDB_ENTITY"          # Name of entity to log under
-
-    seed: int = 10000                                    # Random Seed (for reproducibility)
-
-
-
-@draccus.wrap()
-def openvla_select_action(cfg: GenerateConfig, obs, task_description, resize_size=224):
+def openvla_select_action(obs, task_description, resize_size=224):
     """
     obs: single env obs
     """
+
+    cfg = SimpleNamespace(
+        model_family="openvla",
+        pretrained_checkpoint="runs/libero44/1.0.0/openvla-7b+libero44+b8+lr-0.0005+lora-r32+dropout-0.0--image_aug",
+        load_in_8bit=False,
+        load_in_4bit=False,
+        center_crop=True,
+        task_suite_name="libero_90",
+        num_steps_wait=5,
+        num_trials_per_task=20,
+        run_id_note=None,
+        local_log_dir="./experiments/logs",
+        use_wandb=False,
+        wandb_project="YOUR_WANDB_PROJECT",
+        wandb_entity="YOUR_WANDB_ENTITY",
+        seed=10000,
+    )
 
     img = get_libero_image(obs, resize_size)
     observation = {

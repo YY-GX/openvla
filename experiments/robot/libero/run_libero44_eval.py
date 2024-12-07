@@ -64,8 +64,8 @@ class GenerateConfig:
     # Model-specific parameters
     #################################################################################################################
     model_family: str = "openvla"                    # Model family
-    # pretrained_checkpoint: Union[str, Path] = "runs/libero44/1.0.0/openvla-7b+libero44+b8+lr-0.0005+lora-r32+dropout-0.0--image_aug"     # Pretrained checkpoint path (on libero44)
-    pretrained_checkpoint: Union[str, Path] = "runs/bl3_all/1.0.0/openvla-7b+libero_bl3_all+b8+lr-0.0005+lora-r32+dropout-0.0--image_aug"     # Pretrained checkpoint path (on bl3_all)
+    pretrained_checkpoint: Union[str, Path] = "runs/libero44/1.0.0/openvla-7b+libero44+b8+lr-0.0005+lora-r32+dropout-0.0--image_aug"     # Pretrained checkpoint path (on libero44)
+    # pretrained_checkpoint: Union[str, Path] = "runs/bl3_all/1.0.0/openvla-7b+libero_bl3_all+b8+lr-0.0005+lora-r32+dropout-0.0--image_aug"     # Pretrained checkpoint path (on bl3_all)
     load_in_8bit: bool = False                       # (For OpenVLA only) Load with 8-bit quantization
     load_in_4bit: bool = False                       # (For OpenVLA only) Load with 4-bit quantization
     center_crop: bool = True                         # Center crop? (if trained w/ random crop image aug)
