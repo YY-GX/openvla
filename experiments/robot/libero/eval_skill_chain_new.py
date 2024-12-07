@@ -314,8 +314,10 @@ def main():
 
                 actions = np.zeros((1, 7))
                 for k in range(env_num):
+                    {key: print(key, type(value), value.shape) for key, value in obs.items()}
                     task_description = task_ls[task_indexes[k]].language
-                    action = openvla_select_action(obs=obs[k, ...], task_description=task_description)
+                    obs_single_env = {key: value[k, ...] for key, value in obs.items()}
+                    action = openvla_select_action(obs=obs_single_env, task_description=task_description)
                     actions = np.vstack([actions, action])
                 actions = actions[1:, ...]
                 obs, reward, done, info = env.step(actions)
