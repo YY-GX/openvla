@@ -59,6 +59,8 @@ import argparse
 from pathlib import Path
 from typing import Optional, Union
 
+
+
 def parse_args():
     parser = argparse.ArgumentParser(description="Evaluation script for LIBERO tasks")
 
@@ -72,9 +74,9 @@ def parse_args():
         default="runs/bl3_all/1.0.0/openvla-7b+libero_bl3_all+b8+lr-0.0005+lora-r32+dropout-0.0--image_aug",
         help="Pretrained checkpoint path",
     )
-    parser.add_argument("--load_in_8bit", action="store_true", help="Load with 8-bit quantization")
-    parser.add_argument("--load_in_4bit", action="store_true", help="Load with 4-bit quantization")
-    parser.add_argument("--center_crop", action="store_true", help="Center crop images")
+    parser.add_argument("--load_in_8bit", action="store_true", default=False, help="Load with 8-bit quantization")
+    parser.add_argument("--load_in_4bit", action="store_true", default=False, help="Load with 4-bit quantization")
+    parser.add_argument("--center_crop", action="store_true", default=True, help="Center crop images (default: True)")
 
     #################################################################################################################
     # LIBERO environment-specific parameters
@@ -93,12 +95,14 @@ def parse_args():
     #################################################################################################################
     parser.add_argument("--run_id_note", type=str, default=None, help="Extra note to add in run ID for logging")
     parser.add_argument("--local_log_dir", type=str, default="./experiments/logs", help="Directory for eval logs")
-    parser.add_argument("--use_wandb", action="store_true", help="Log results in Weights & Biases")
+    parser.add_argument("--use_wandb", action="store_true", default=False, help="Log results in Weights & Biases")
     parser.add_argument("--wandb_project", type=str, default="YOUR_WANDB_PROJECT", help="W&B project name")
     parser.add_argument("--wandb_entity", type=str, default="YOUR_WANDB_ENTITY", help="W&B entity name")
     parser.add_argument("--seed", type=int, default=10000, help="Random seed for reproducibility")
 
     return parser.parse_args()
+
+
 
 def eval_libero(cfg):
     assert cfg.pretrained_checkpoint is not None, "cfg.pretrained_checkpoint must not be None!"
