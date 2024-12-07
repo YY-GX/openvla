@@ -55,49 +55,52 @@ from experiments.robot.robot_utils import (
     set_seed_everywhere,
 )
 
+import argparse
+from pathlib import Path
+from typing import Optional, Union
 
-@dataclass
-class GenerateConfig:
-    # fmt: off
+def parse_args():
+    parser = argparse.ArgumentParser(description="Evaluation script for LIBERO tasks")
 
     #################################################################################################################
     # Model-specific parameters
     #################################################################################################################
-    model_family: str = "openvla"                    # Model family
-    # pretrained_checkpoint: Union[str, Path] = "runs/libero44/1.0.0/openvla-7b+libero44+b8+lr-0.0005+lora-r32+dropout-0.0--image_aug"     # Pretrained checkpoint path (on libero44)
-    pretrained_checkpoint: Union[str, Path] = "runs/bl3_all/1.0.0/openvla-7b+libero_bl3_all+b8+lr-0.0005+lora-r32+dropout-0.0--image_aug"     # Pretrained checkpoint path (on bl3_all)
-    load_in_8bit: bool = False                       # (For OpenVLA only) Load with 8-bit quantization
-    load_in_4bit: bool = False                       # (For OpenVLA only) Load with 4-bit quantization
-    center_crop: bool = True                         # Center crop? (if trained w/ random crop image aug)
+    parser.add_argument("--model_family", type=str, default="openvla", help="Model family")
+    parser.add_argument(
+        "--pretrained_checkpoint",
+        type=str,
+        default="runs/bl3_all/1.0.0/openvla-7b+libero_bl3_all+b8+lr-0.0005+lora-r32+dropout-0.0--image_aug",
+        help="Pretrained checkpoint path",
+    )
+    parser.add_argument("--load_in_8bit", action="store_true", help="Load with 8-bit quantization")
+    parser.add_argument("--load_in_4bit", action="store_true", help="Load with 4-bit quantization")
+    parser.add_argument("--center_crop", action="store_true", help="Center crop images")
 
     #################################################################################################################
     # LIBERO environment-specific parameters
     #################################################################################################################
-    task_suite_name: str = "libero_90"          # Task suite. Options: libero_spatial, libero_object, libero_goal, libero_10, libero_90
-    # task_suite_name: str = "single_step"  # Task suite. Options: libero_spatial, libero_object, libero_goal, libero_10, libero_90
-    # task_suite_name: str = "multi_step_2"
-    # task_suite_name: str = "multi_step_3"
-    num_steps_wait: int = 5                         # Number of steps to wait for objects to stabilize in sim
-    num_trials_per_task: int = 20                    # Number of rollouts per task
-    # task_order_index: int = 0
+    parser.add_argument(
+        "--task_suite_name",
+        type=str,
+        default="libero_90",
+        help="Task suite. Options: libero_spatial, libero_object, libero_goal, libero_10, libero_90, single_step, multi_step_2, multi_step_3",
+    )
+    parser.add_argument("--num_steps_wait", type=int, default=5, help="Number of steps to wait in sim")
+    parser.add_argument("--num_trials_per_task", type=int, default=20, help="Number of rollouts per task")
 
     #################################################################################################################
     # Utils
     #################################################################################################################
-    run_id_note: Optional[str] = None                # Extra note to add in run ID for logging
-    local_log_dir: str = "./experiments/logs"        # Local directory for eval logs
+    parser.add_argument("--run_id_note", type=str, default=None, help="Extra note to add in run ID for logging")
+    parser.add_argument("--local_log_dir", type=str, default="./experiments/logs", help="Directory for eval logs")
+    parser.add_argument("--use_wandb", action="store_true", help="Log results in Weights & Biases")
+    parser.add_argument("--wandb_project", type=str, default="YOUR_WANDB_PROJECT", help="W&B project name")
+    parser.add_argument("--wandb_entity", type=str, default="YOUR_WANDB_ENTITY", help="W&B entity name")
+    parser.add_argument("--seed", type=int, default=10000, help="Random seed for reproducibility")
 
-    use_wandb: bool = False                          # Whether to also log results in Weights & Biases
-    wandb_project: str = "YOUR_WANDB_PROJECT"        # Name of W&B project to log to (use default!)
-    wandb_entity: str = "YOUR_WANDB_ENTITY"          # Name of entity to log under
+    return parser.parse_args()
 
-    seed: int = 10000                                    # Random Seed (for reproducibility)
-
-    # fmt: on
-
-
-@draccus.wrap()
-def eval_libero(cfg: GenerateConfig) -> None:
+def eval_libero(cfg):
     assert cfg.pretrained_checkpoint is not None, "cfg.pretrained_checkpoint must not be None!"
     if "image_aug" in cfg.pretrained_checkpoint:
         assert cfg.center_crop, "Expecting `center_crop==True` because model was trained with image augmentations!"
@@ -305,4 +308,5 @@ def eval_libero(cfg: GenerateConfig) -> None:
 
 
 if __name__ == "__main__":
-    eval_libero()
+    cfg = parse_args()
+    eval_libero(cfg)
