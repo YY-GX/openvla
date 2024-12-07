@@ -189,7 +189,8 @@ def main():
     print(f"{descriptions}")
     print("======= Tasks Language =======")
 
-    save_dir = "/mnt/arc/yygx/pkgs_baselines/openvla/experiments/logs/bm3"
+    save_dir = f"/mnt/arc/yygx/pkgs_baselines/openvla/experiments/logs/bm3/task_order_index_{args.task_order_index}/"
+    os.system(f"mkdir -p {save_dir}")
 
     # yy: For collecting necessary list of items
     # For sequential env, need to obtain: cfg_ls, algo_ls, initial_states_ls
@@ -361,9 +362,9 @@ def main():
 
         torch.save(eval_stats, save_stats_pth)
 
-    with open(os.path.join(save_dir, f"succ_rate_evaluation_on_ori_envs.npy"), 'wb') as f:
+    with open(os.path.join(save_dir, f"succ_rate_evaluation_on_ori_envs_task_order_index_{args.task_order_index}.npy"), 'wb') as f:
         np.save(f, success_rate)
-    with open(os.path.join(save_dir, f"level_succ.pkl"), 'wb') as f:
+    with open(os.path.join(save_dir, f"level_succ_task_order_index_{args.task_order_index}.pkl"), 'wb') as f:
         pickle.dump(level_success_rate, f)
 
     print(
