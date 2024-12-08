@@ -280,8 +280,8 @@ def main():
                 )
                 for i, cfg_ in enumerate(cfg_ls)
             ],
-            "camera_heights": [cfg_.data.img_h for _, cfg_ in enumerate(cfg_ls)],
-            "camera_widths": [cfg_.data.img_w for _, cfg_ in enumerate(cfg_ls)],
+            "camera_heights": [256 for _, cfg_ in enumerate(cfg_ls)],
+            "camera_widths": [256 for _, cfg_ in enumerate(cfg_ls)],
         }
         env_num = cfg['eval']['n_eval']
         env = SubprocVectorEnv(
@@ -301,7 +301,7 @@ def main():
         num_success = 0
         level_success_rate = {int(task_idx): 0 for task_idx in range(n_tasks)}
         for _ in range(5):  # simulate the physics without any actions
-            env.step(np.zeros((env_num, 7)))
+            obs, reward, done, info = env.step(get_libero_dummy_action("openvla"))
 
         # TODO: Start coding from this line!!!
         # yy: formal start of the evaluation
@@ -379,3 +379,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
