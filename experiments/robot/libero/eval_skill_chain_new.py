@@ -300,8 +300,10 @@ def main():
         steps = 0
         num_success = 0
         level_success_rate = {int(task_idx): 0 for task_idx in range(n_tasks)}
+        dummy_action = np.zeros((env_num, 7))
+        dummy_action[:, -1] = -1.0
         for _ in range(5):  # simulate the physics without any actions
-            obs, reward, done, info = env.step(get_libero_dummy_action("openvla"))
+            obs, reward, done, info = env.step(dummy_action)
 
         # TODO: Start coding from this line!!!
         # yy: formal start of the evaluation
