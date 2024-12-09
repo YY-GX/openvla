@@ -168,7 +168,7 @@ def openvla_select_action(obs, task_description, model, resize_size=224):
         processor=processor,
     )
     action = normalize_gripper_action(action, binarize=True)
-    action = invert_gripper_action(action.tolist())
+    action = invert_gripper_action(action).tolist()
     return np.array(action)
 
 
