@@ -324,7 +324,7 @@ if __name__ == "__main__":
                         default="/mnt/arc/yygx/pkgs_baselines/LIBERO/libero/datasets/libero_90")
     parser.add_argument("--libero_target_dir", type=str,
                         help="Path to regenerated dataset directory. Example: ./LIBERO/libero/datasets/libero_spatial_no_noops",
-                        default="/mnt/arc/yygx/pkgs_baselines/LIBERO/libero/datasets/libero_90_openvla_no_noops")
+                        default="/mnt/arc/yygx/pkgs_baselines/LIBERO/libero/datasets/libero_90_openvla_no_noops_full")
     args = parser.parse_args()
 
     # Start data regeneration
