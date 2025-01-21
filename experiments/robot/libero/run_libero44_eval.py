@@ -73,7 +73,8 @@ class GenerateConfig:
     #################################################################################################################
     # LIBERO environment-specific parameters
     #################################################################################################################
-    task_suite_name: str = "libero_90"          # Task suite. Options: libero_spatial, libero_object, libero_goal, libero_10, libero_90
+    task_suite_name: str = "libero_90_full"  # Task suite. Options: libero_spatial, libero_object, libero_goal, libero_10, libero_90
+    # task_suite_name: str = "libero_90"          # Task suite. Options: libero_spatial, libero_object, libero_goal, libero_10, libero_90
     # task_suite_name: str = "single_step"  # Task suite. Options: libero_spatial, libero_object, libero_goal, libero_10, libero_90
     # task_suite_name: str = "multi_step_2"
     # task_suite_name: str = "multi_step_3"
@@ -220,6 +221,7 @@ def eval_libero(cfg: GenerateConfig) -> None:
                     # Note: OpenVLA does not take proprio state as input
                     observation = {
                         "full_image": img,
+                        # yy: actually not used
                         "state": np.concatenate(
                             (obs["robot0_eef_pos"], quat2axisangle(obs["robot0_eef_quat"]), obs["robot0_gripper_qpos"])
                         ),
