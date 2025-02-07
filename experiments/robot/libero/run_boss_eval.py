@@ -19,9 +19,8 @@ Usage:
 
 import os
 current_working_directory = os.getcwd()
-os.chdir(os.environ['PYTHONPATH'])
+os.chdir("/mnt/arc/yygx/paper_codebases/RA-L_25/BOSS")
 from libero.libero import benchmark
-# from libero.libero.benchmark import task_orders
 os.chdir(current_working_directory)
 
 import sys
