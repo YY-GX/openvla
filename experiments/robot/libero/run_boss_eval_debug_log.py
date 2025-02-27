@@ -20,7 +20,10 @@ Usage:
 import os
 current_working_directory = os.getcwd()
 os.chdir("/mnt/arc/yygx/paper_codebases/RA-L_25/BOSS")
+import sys
+sys.path.insert(0, '/mnt/arc/yygx/paper_codebases/RA-L_25/BOSS')
 from libero.libero import benchmark
+sys.path.remove('/mnt/arc/yygx/paper_codebases/RA-L_25/BOSS')
 os.chdir(current_working_directory)
 
 import sys
@@ -34,8 +37,22 @@ import tqdm
 
 import wandb
 
+import dataclasses
+import json
+
+
+def load_json(fn):
+    with open(fn, 'r') as f:
+        data = json.load(f)
+    return data
+
+def save_json(data, fn, indent=4):
+    with open(fn, 'w') as f:
+        json.dump(data, f, indent=indent)
+
 # Append current directory so that interpreter can find experiments.robot
-sys.path.append("../..")
+# sys.path.append("../..")
+sys.path.insert(0, '/mnt/arc/cezhang/projects/openvla')
 from experiments.robot.libero.libero_utils import (
     get_libero_dummy_action,
     get_libero_env,
@@ -53,11 +70,20 @@ from experiments.robot.robot_utils import (
     normalize_gripper_action,
     set_seed_everywhere,
 )
+import inspect
+print(os.path.abspath(inspect.getfile(get_action)))
 
 
 @dataclass
 class GenerateConfig:
     # fmt: off
+
+    window_size: int = 1                                            # Window Size
+    stride: int = 1                                                 # Stride (FPS = 30)
+    hist_type: str = 'normal'                                       #
+    backup_pretrained_checkpoint: Union[str, Path] = ""             # Backup Pretrained checkpoint path (on libero44)
+    # enable_global_feature: int = 0
+    pooling_method: str = None
 
     #################################################################################################################
     # Model-specific parameters
@@ -96,6 +122,15 @@ class GenerateConfig:
 
     # fmt: on
 
+    def to_dict(self):
+        """Convert dataclass to dict, ensuring Path objects are converted to strings."""
+        return {key: str(value) if isinstance(value, Path) else value for key, value in dataclasses.asdict(self).items()}
+
+    def save_json(self, file_path: Path):
+        """Save the config as a JSON file."""
+        with open(file_path, "w") as f:
+            json.dump(self.to_dict(), f, indent=4)
+
 
 @draccus.wrap()
 def eval_libero(cfg: GenerateConfig) -> None:
@@ -120,7 +155,7 @@ def eval_libero(cfg: GenerateConfig) -> None:
         # with the suffix "_no_noops" in the dataset name)
         # if cfg.unnorm_key not in model.norm_stats and f"{cfg.unnorm_key}_no_noops" in model.norm_stats:
         #     cfg.unnorm_key = f"{cfg.unnorm_key}_no_noops"
-        cfg.unnorm_key = "libero44"
+        cfg.unnorm_key = f'libero_{cfg.task_suite_name}'
         assert cfg.unnorm_key in model.norm_stats, f"Action un-norm key {cfg.unnorm_key} not found in VLA `norm_stats`!"
 
     # [OpenVLA] Get Hugging Face processor
@@ -128,11 +163,23 @@ def eval_libero(cfg: GenerateConfig) -> None:
     if cfg.model_family == "openvla":
         processor = get_processor(cfg)
 
+    # backup model and processor
+    backup_model = None
+    backup_processor = None
+    backup_max_steps = 50
+    if len(cfg.backup_pretrained_checkpoint) > 0 and os.path.exists(cfg.backup_pretrained_checkpoint):
+        cfg.pretrained_checkpoint = cfg.backup_pretrained_checkpoint
+        backup_model = get_model(cfg)
+        backup_processor = get_processor(cfg)
+        print('initialize backup_model')
+
+
     # Initialize local logging
     run_id = f"EVAL-{cfg.task_suite_name}-{cfg.model_family}-{DATE_TIME}"
     if cfg.run_id_note is not None:
         run_id += f"--{cfg.run_id_note}"
     os.makedirs(cfg.local_log_dir, exist_ok=True)
+    cfg.save_json(os.path.join(cfg.local_log_dir, 'cfg.json'))
     local_log_filepath = os.path.join(cfg.local_log_dir, run_id + ".txt")
     log_file = open(local_log_filepath, "w")
     print(f"Logging to local log file: {local_log_filepath}")
@@ -147,6 +194,7 @@ def eval_libero(cfg: GenerateConfig) -> None:
 
     # Initialize LIBERO task suite
     benchmark_dict = benchmark.get_benchmark_dict()
+    # print(benchmark_dict.keys())
     task_suite = benchmark_dict[cfg.task_suite_name]()
     num_tasks_in_suite = task_suite.n_tasks
     print(f"Task suite: {cfg.task_suite_name}")
@@ -160,7 +208,21 @@ def eval_libero(cfg: GenerateConfig) -> None:
     # Start evaluation
     total_episodes, total_successes = 0, 0
     tasks_success_list = []
-    for task_id in tqdm.tqdm(range(num_tasks_in_suite)):
+    # task_id_list = list(range(num_tasks_in_suite))[::-1]
+    task_id_list = [0,1,2] # TODO @Ce: use all 10 tasks
+
+
+    # yy: Prepare for debugging log set
+    debug_logs = [{
+        'task_id': task_id,
+        'task_description': None,
+        'actions_ls': None,
+        'obses_ls': None,
+        'initial_state_ls': None,
+    } for task_id in task_id_list]
+
+    for task_idx, task_id in enumerate(task_id_list):
+    # for task_id in tqdm.tqdm(range(num_tasks_in_suite)):
         # Get task
         task = task_suite.get_task(task_id)
 
@@ -172,6 +234,7 @@ def eval_libero(cfg: GenerateConfig) -> None:
 
         # Start episodes
         task_episodes, task_successes = 0, 0
+        actions_ls, obses_ls, init_ls = [], [], []
         for episode_idx in tqdm.tqdm(range(cfg.num_trials_per_task)):
             print(f"\nTask: {task_description}")
             log_file.write(f"\nTask: {task_description}\n")
@@ -181,6 +244,9 @@ def eval_libero(cfg: GenerateConfig) -> None:
 
             # Set initial states
             obs = env.set_init_state(initial_states[episode_idx % initial_states.shape[0]])
+
+            # yy: save initial state into log
+            init_ls.append(initial_states[episode_idx % initial_states.shape[0]])
 
             # Setup
             t = 0
@@ -202,11 +268,17 @@ def eval_libero(cfg: GenerateConfig) -> None:
             elif ((cfg.task_suite_name == "g1") or
                   (cfg.task_suite_name == "g2") or
                   (cfg.task_suite_name == "g3") or
-                  (cfg.task_suite_name == "g4")):
+                  (cfg.task_suite_name == "g4") or
+                  (cfg.task_suite_name == "g5") or
+                  (cfg.task_suite_name == "g6") or
+                  (cfg.task_suite_name == "g7") or
+                  (cfg.task_suite_name == "g8")):
                 max_steps = 400  # longest training demo has 373 steps
 
             print(f"Starting episode {task_episodes+1}...")
             log_file.write(f"Starting episode {task_episodes+1}...\n")
+
+            actions, obses = [], []
             while t < max_steps + cfg.num_steps_wait:
                 try:
                     # IMPORTANT: Do nothing for the first few timesteps because the simulator drops objects
@@ -222,24 +294,88 @@ def eval_libero(cfg: GenerateConfig) -> None:
                     # Save preprocessed image for replay video
                     replay_images.append(img)
 
+                    image_inputs = []
+                    if cfg.hist_type == 'v1':
+                        # version 1: pad with first sampled frame
+                        i = len(replay_images) - 1
+                        image_inputs = []
+                        while i >= 0:
+                            image_inputs.append(replay_images[i])
+                            i -= cfg.stride
+                        image_inputs = image_inputs[:cfg.window_size][::-1]
+                        if len(image_inputs) < cfg.window_size:
+                            image_inputs = [image_inputs[0]] * (cfg.window_size - len(image_inputs)) + image_inputs
+                    elif cfg.hist_type == 'normal':
+                        # version 2: pad with the very first frame (t = 0)
+                        i = len(replay_images) - 1
+                        image_inputs = []
+                        while i >= 0:
+                            image_inputs.append(replay_images[i])
+                            i -= cfg.stride
+                        image_inputs = image_inputs[:cfg.window_size][::-1]
+                        if len(image_inputs) < cfg.window_size:
+                            image_inputs = [replay_images[0]] * (cfg.window_size - len(image_inputs)) + image_inputs
+                    elif cfg.hist_type == 'pos':
+                        # version 3: no pad
+                        i = len(replay_images) - 1
+                        image_inputs = []
+                        while i >= 0:
+                            image_inputs.append(replay_images[i])
+                            i -= cfg.stride
+                        image_inputs = image_inputs[:cfg.window_size][::-1]
+                    elif cfg.hist_type == 'same':
+                        # version 4: repeat
+                        image_inputs = [img] * cfg.window_size
+                    elif cfg.hist_type == 'last':
+                        # version 5: debug
+                        image_inputs = [img]
+                    elif cfg.hist_type == 'reverse':
+                        # version 2: pad with the very first frame (t = 0)
+                        i = len(replay_images) - 1
+                        image_inputs = []
+                        while i >= 0:
+                            image_inputs.append(replay_images[i])
+                            i -= cfg.stride
+                        image_inputs = image_inputs[:cfg.window_size]
+                        if len(image_inputs) < cfg.window_size:
+                            image_inputs = [replay_images[0]] * (cfg.window_size - len(image_inputs)) + image_inputs
                     # Prepare observations dict
                     # Note: OpenVLA does not take proprio state as input
                     observation = {
-                        "full_image": img,
+                        "full_image": image_inputs,
                         # yy: actually not used
                         "state": np.concatenate(
                             (obs["robot0_eef_pos"], quat2axisangle(obs["robot0_eef_quat"]), obs["robot0_gripper_qpos"])
                         ),
                     }
 
-                    # Query model to get action
-                    action = get_action(
-                        cfg,
-                        model,
-                        observation,
-                        task_description,
-                        processor=processor,
-                    )
+                    # backup?
+                    if backup_model is not None and t < backup_max_steps:
+                        # Query backup model to get action
+                        # print('use backup model')
+                        observation = {
+                            "full_image": [image_inputs[-1]],
+                            # yy: actually not used
+                            "state": np.concatenate(
+                                (obs["robot0_eef_pos"], quat2axisangle(obs["robot0_eef_quat"]), obs["robot0_gripper_qpos"])
+                            ),
+                        }
+                        action = get_action(
+                            cfg,
+                            backup_model,
+                            observation,
+                            task_description,
+                            processor=backup_processor,
+                        )
+                    else:
+                        # Query model to get action
+                        action = get_action(
+                            cfg,
+                            model,
+                            observation,
+                            task_description,
+                            processor=processor,
+                        )
 
                     # Normalize gripper action [0,1] -> [-1,+1] because the environment expects the latter
                     action = normalize_gripper_action(action, binarize=True)
@@ -248,6 +384,11 @@ def eval_libero(cfg: GenerateConfig) -> None:
                     # (0 = close, 1 = open), so flip it back (-1 = open, +1 = close) before executing the action
                     if cfg.model_family == "openvla":
                         action = invert_gripper_action(action)
+
+
+                    # yy: insert log information here
+                    actions.append(action.tolist())
+                    obses.append(observation)
 
                     # Execute action in environment
                     obs, reward, done, info = env.step(action.tolist())
@@ -262,12 +403,17 @@ def eval_libero(cfg: GenerateConfig) -> None:
                     log_file.write(f"Caught exception: {e}\n")
                     break
 
+            actions_ls.append(actions)
+            obses_ls.append(obses)
+
             task_episodes += 1
             total_episodes += 1
 
+            rollout_path = os.path.join(cfg.local_log_dir, 'rollouts', str(task_id))
+            os.makedirs(rollout_path, exist_ok=True)
             # Save a replay video of the episode
             save_rollout_video(
-                replay_images, total_episodes, success=done, task_description=task_description, log_file=log_file
+                rollout_path, replay_images, total_episodes, success=done, task_description=task_description, log_file=log_file
             )
 
             # Log current results
@@ -294,6 +440,23 @@ def eval_libero(cfg: GenerateConfig) -> None:
                     f"num_episodes/{task_description}": task_episodes,
                 }
             )
+
+        # save to json
+        save_json(tasks_success_list, os.path.join(cfg.local_log_dir, f"tasks_success_list_{cfg.task_suite_name}_seed_{cfg.seed}.json"))
+
+        # yy: log debug logs
+        debug_logs[task_idx]['task_description'] = task_description
+        debug_logs[task_idx]['actions_ls'], debug_logs[task_idx]['obses_ls'], debug_logs[task_idx]['initial_state_ls'] = \
+        actions_ls, obses_ls, init_ls
+
+
+    # yy: Save debug logs use pickle at cfg.local_log_dir
+    import pickle
+    debug_log_path = os.path.join(cfg.local_log_dir, f"debug_logs_{cfg.task_suite_name}_seed_{cfg.seed}.pkl")
+    with open(debug_log_path, 'wb') as f:
+        pickle.dump(debug_logs, f)
+    print(f"Debug logs saved to {debug_log_path}")
+
 
     # Save local log file
     log_file.close()
